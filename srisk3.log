@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.11.18)  29 MAY 2015 18:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.11.18)  29 MAY 2015 19:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -308,77 +308,76 @@ Overfull \hbox (6.31163pt too wide) in paragraph at lines 197--198
  []
 
 [4] [5 <./figures/simulation.pdf>] [6] [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 310.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 314.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 310.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 314.
  [8] [9] [10]
 [11] <figures/default.pdf, id=62, 351.3125pt x 250.9375pt>
 File: figures/default.pdf Graphic file (type pdf)
 
 <use figures/default.pdf>
-Package pdftex.def Info: figures/default.pdf used on input line 414.
+Package pdftex.def Info: figures/default.pdf used on input line 418.
 (pdftex.def)             Requested size: 351.31163pt x 250.93687pt.
 
-Overfull \hbox (6.31163pt too wide) in paragraph at lines 414--415
+Overfull \hbox (6.31163pt too wide) in paragraph at lines 418--419
  [] 
  []
 
-[12 <./figures/default.pdf>]
-<figures/muqs.pdf, id=68, 351.3125pt x 150.5625pt>
+[12 <./figures/default.pdf>] [13]
+<figures/muqs.pdf, id=72, 351.3125pt x 150.5625pt>
 File: figures/muqs.pdf Graphic file (type pdf)
  <use figures/muqs.pdf>
-Package pdftex.def Info: figures/muqs.pdf used on input line 474.
+Package pdftex.def Info: figures/muqs.pdf used on input line 478.
 (pdftex.def)             Requested size: 351.31163pt x 150.56212pt.
 
-Overfull \hbox (6.31163pt too wide) in paragraph at lines 474--475
+Overfull \hbox (6.31163pt too wide) in paragraph at lines 478--479
  [] 
  []
 
-[13] [14 <./figures/muqs.pdf>] [15] [16] [17]
-<figures/sysstress.pdf, id=87, 351.3125pt x 150.5625pt>
+[14 <./figures/muqs.pdf>] [15] [16] [17] [18]
+<figures/sysstress.pdf, id=90, 351.3125pt x 150.5625pt>
 File: figures/sysstress.pdf Graphic file (type pdf)
 
 <use figures/sysstress.pdf>
-Package pdftex.def Info: figures/sysstress.pdf used on input line 643.
+Package pdftex.def Info: figures/sysstress.pdf used on input line 647.
 (pdftex.def)             Requested size: 351.31163pt x 150.56212pt.
 
-Overfull \hbox (6.31163pt too wide) in paragraph at lines 643--644
+Overfull \hbox (6.31163pt too wide) in paragraph at lines 647--648
  [] 
  []
 
-[18] [19 <./figures/sysstress.pdf>] Excluding 'comment' comment. [20]
-(./srisk3.bbl [21]) [22] (./srisk3.aux) ) 
+[19 <./figures/sysstress.pdf>] Excluding 'comment' comment. [20] (./srisk3.bbl
+[21]) [22] (./srisk3.aux) ) 
 Here is how much of TeX's memory you used:
  3193 strings out of 493117
  41765 string characters out of 6135432
- 108507 words of memory out of 5000000
+ 107507 words of memory out of 5000000
  6580 multiletter control sequences out of 15000+600000
  10963 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,8n,34p,1218b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmti10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti8.pfb>
-Output written on srisk3.pdf (22 pages, 4471959 bytes).
+</usr/local/texlive/2014/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on srisk3.pdf (22 pages, 4472136 bytes).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
  110 compressed objects within 2 object streams
