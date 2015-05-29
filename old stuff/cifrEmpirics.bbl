@@ -1,0 +1,59 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Acharya, Engle, and Richardson}{Acharya
+  et~al.}{2012}]{acharya2012aer}
+Acharya, V., R.~Engle, and M.~Richardson (2012).
+\newblock Capital shortfall: A new approach to ranking and regulating systemic
+  risks.
+\newblock {\em The American Economic Review\/}~{\em 102\/}(3), 59--64.
+
+\bibitem[\protect\citeauthoryear{Adrian and Brunnermeier}{Adrian and
+  Brunnermeier}{2011}]{adrian2011}
+Adrian, T. and M.~K. Brunnermeier (2011).
+\newblock {CoVaR}.
+\newblock FRB of New York Staff Report No. 348. Available at SSRN:
+  http://ssrn.com/abstract=1269446 or http://dx.doi.org/10.2139/ssrn.1269446.
+
+\bibitem[\protect\citeauthoryear{Allen, Bali, and Tang}{Allen
+  et~al.}{2012}]{Allen2012}
+Allen, L., T.~G. Bali, and Y.~Tang (2012).
+\newblock Does systemic risk in the financial sector predict future economic
+  downturns?
+\newblock {\em Review of Financial Studies\/}~{\em 25\/}(10), 3000--3036.
+
+\bibitem[\protect\citeauthoryear{Brownlees and Engle}{Brownlees and
+  Engle}{2015}]{brownlees2015}
+Brownlees, C.~T. and R.~F. Engle (2015).
+\newblock {SRISK}: A conditional capital shortfall index for systemic risk
+  measurement.
+\newblock FRB of New York Staff Report No. 348. Available at SSRN:
+  http://ssrn.com/abstract=1611229 or http://dx.doi.org/10.2139/ssrn.1611229.
+
+\bibitem[\protect\citeauthoryear{Engle}{Engle}{2014}]{Engle2014dcb}
+Engle, R. (2014).
+\newblock Dynamic conditional beta.
+\newblock Unpublished working paper. New York University. Available at SSRN:
+  http://ssrn.com/abstract=2404020 or http://dx.doi.org/10.2139/ssrn.2404020.
+
+\bibitem[\protect\citeauthoryear{Engle, Jondeau, and Rockinger}{Engle
+  et~al.}{2014}]{Engle2014}
+Engle, R., E.~Jondeau, and M.~Rockinger (2014).
+\newblock {Systemic Risk in Europe}.
+\newblock {\em Review of Finance\/}.
+\newblock Available at http://dx.doi.org/10.1093/rof/rfu012.
+
+\bibitem[\protect\citeauthoryear{Girardi and Erg{\"u}n}{Girardi and
+  Erg{\"u}n}{2013}]{Girardi2013}
+Girardi, G. and A.~T. Erg{\"u}n (2013).
+\newblock Systemic risk measurement: Multivariate {GARCH} estimation of
+  {CoVaR}.
+\newblock {\em Journal of Banking \& Finance\/}~{\em 37\/}(8), 3169--3180.
+
+\bibitem[\protect\citeauthoryear{{Mainik} and {Schaanning}}{{Mainik} and
+  {Schaanning}}{2012}]{Mainik2012}
+{Mainik}, G. and E.~{Schaanning} (2012).
+\newblock {On dependence consistency of CoVaR and some other systemic risk
+  measures}.
+\newblock {\em ArXiv e-prints\/}.
+
+\end{thebibliography}

@@ -1,0 +1,83 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Acharya, Engle, and Richardson}{Acharya
+  et~al.}{2012}]{acharya2012capital}
+Acharya, V., R.~Engle, and M.~Richardson (2012).
+\newblock Capital shortfall: A new approach to ranking and regulating systemic
+  risks.
+\newblock {\em The American Economic Review\/}~{\em 102\/}(3), 59--64.
+
+\bibitem[\protect\citeauthoryear{Acharya, Pedersen, Philippon, and
+  Richardson}{Acharya et~al.}{2012a}]{acharya2012measuring}
+Acharya, V., L.~Pedersen, T.~Philippon, and M.~Richardson (2012a).
+\newblock Measuring systemic risk.
+
+\bibitem[\protect\citeauthoryear{Acharya, Pedersen, Philippon, and
+  Richardson}{Acharya et~al.}{2012b}]{acharya2012wp}
+Acharya, V.~V., L.~H. Pedersen, T.~Philippon, and M.~P. Richardson (2012b).
+\newblock Measuring systemic risk.
+\newblock CEPR Discussion Paper No. DP8824. Available at SSRN:
+  http://ssrn.com/abstract=2013815.
+
+\bibitem[\protect\citeauthoryear{Adrian and Brunnermeier}{Adrian and
+  Brunnermeier}{2011}]{adrian2011covar}
+Adrian, T. and M.~K. Brunnermeier (2011).
+\newblock Covar.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[\protect\citeauthoryear{Bjerve and Doksum}{Bjerve and
+  Doksum}{1993}]{bjerve1993correlation}
+Bjerve, S. and K.~Doksum (1993).
+\newblock Correlation curves: measures of association as functions of covariate
+  values.
+\newblock {\em The Annals of Statistics\/}, 890--902.
+
+\bibitem[\protect\citeauthoryear{Brown and {d}e Jong}{Brown and {d}e
+  Jong}{2001}]{Brown&DeJong:2001}
+Brown, P. and P.~{d}e Jong (2001).
+\newblock Nonparametric smoothing with the state space model.
+\newblock {\em Canadian Journal of Statistics\/}~{\em 29\/}(1), 37--50.
+
+\bibitem[\protect\citeauthoryear{Brownlees and Engle}{Brownlees and
+  Engle}{2010}]{brownlees2010volatility}
+Brownlees, C.~T. and R.~Engle (2010).
+\newblock Volatility, correlation and tails for systemic risk measurement.
+\newblock {\em New York University, mimeo\/}.
+
+\bibitem[\protect\citeauthoryear{Brownlees and Engle}{Brownlees and
+  Engle}{2015}]{brownlees2015}
+Brownlees, C.~T. and R.~F. Engle (2015).
+\newblock {SRISK}: A conditional capital shortfall index for systemic risk
+  measurement.
+\newblock FRB of New York Staff Report No. 348. Available at SSRN:
+  http://ssrn.com/abstract=1611229 or http://dx.doi.org/10.2139/ssrn.1611229.
+
+\bibitem[\protect\citeauthoryear{De~Jong}{De~Jong}{1991}]{DeJong:91a}
+De~Jong, P. (1991).
+\newblock The diffuse {K}alman filter.
+\newblock {\em Annals of Statistics\/}~{\em 19\/}(2), 1073--1083.
+
+\bibitem[\protect\citeauthoryear{De~Jong and Shephard}{De~Jong and
+  Shephard}{1995}]{DeJong&Shephard:95}
+De~Jong, P. and N.~Shephard (1995).
+\newblock The simulation smoother for time series models.
+\newblock {\em Biometrika\/}~{\em 82}, 339--350.
+
+\bibitem[\protect\citeauthoryear{Engle}{Engle}{2002}]{engle2002dynamic}
+Engle, R. (2002).
+\newblock Dynamic conditional correlation: A simple class of multivariate
+  generalized autoregressive conditional heteroskedasticity models.
+\newblock {\em Journal of Business \& Economic Statistics\/}~{\em 20\/}(3),
+  339--350.
+
+\bibitem[\protect\citeauthoryear{Engle}{Engle}{2014}]{engle2014dynamic}
+Engle, R.~F. (2014).
+\newblock Dynamic conditional beta.
+\newblock {\em Available at SSRN 2404020\/}.
+
+\bibitem[\protect\citeauthoryear{Patton}{Patton}{2006}]{patton2006modelling}
+Patton, A.~J. (2006).
+\newblock Modelling asymmetric exchange rate dependence*.
+\newblock {\em International economic review\/}~{\em 47\/}(2), 527--556.
+
+\end{thebibliography}

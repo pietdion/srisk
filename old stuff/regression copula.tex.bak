@@ -1,0 +1,85 @@
+\documentclass[authoryear]{elsarticle}
+\usepackage{latexsym}
+%\usepackage{rotate}
+\usepackage{graphics}
+%\usepackage{amsmath}
+\usepackage{comment}
+\bibliographystyle{chicago}
+
+
+
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\I}{\mathrm{I}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\vecm}{\mathrm{vec}}
+\newcommand{\kp}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\obdots}{\ddots}    % change this later
+\newcommand{\Ex}{{\cal E}}
+\newcommand{\rat}{{\frac{c_{ij}}{c_{i,j-1}}}}
+\newcommand{\rmu}{m}
+\newcommand{\rsig}{\nu}
+\newcommand{\fd}{\mu}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\cor}{\mathrm{cor}}
+\newcommand{\bx}[1]{\ensuremath{\overline{#1}|}}
+\newcommand{\an}[1]{\ensuremath{a_{\bx{#1}}}}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\renewcommand{\i}{\item}
+\newcommand{\sr}{\ensuremath{\mathrm{SRISK}}}
+\newcommand{\cs}{\ensuremath{\mathrm{CS}}}
+\newcommand{\cri}{\ensuremath{\mathrm{Crisis}}}
+\newcommand{\var}{\ensuremath{\mathrm{VaR}}}
+\newcommand{\covar}{\ensuremath{\mathrm{CoVaR}}}
+\newcommand{\med}{\ensuremath{\mathrm{m}}}
+\newcommand{\de}{\mathrm{d}}
+\renewcommand{\v}{\ensuremath{\mathrm{v}_q}}
+\newcommand{\m}{\ensuremath{\mathrm{m}}}
+\newcommand{\tvar}{\ensuremath{\mathrm{TVaR}}}
+
+
+
+\newcommand{\eref}[1]{(\ref{#1})}
+\newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\sref}[1]{\S\ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
+\newcommand{\aref}[1]{Appendix \ref{#1}}
+
+
+
+
+\newcommand{\cq}{\ , \qquad}
+\renewcommand{\P}{\mathrm{P}}
+\newcommand{\Q}{\mathrm{Q}}
+
+\newcommand{\Vx}{{\cal V}}
+\newcommand{\be}[1]{\begin{equation}\label{#1}}
+\newcommand{\ee}{\end{equation}}
+
+
+
+
+
+\begin{document}
+
+\section{Regression dependence model}
+
+The regression dependence model is
+$$
+z_t=\alpha_t+\beta q_t + s\eps_t
+$$
+
+
+\section*{References}
+\bibliography{piet2}
+
+
+\end{document}

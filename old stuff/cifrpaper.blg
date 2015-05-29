@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: cifrpaper.aux
+The style file: chicago.bst
+Database file #1: /users/pietdejong/documents/research/cifr/piet2.bib
+Warning--no journal in acharya2012measuring
+Warning--no number and no volume in acharya2012measuring
+Warning--page numbers missing in acharya2012measuring
+Warning--no number and no volume in bjerve1993correlation
+Warning--no number and no volume in brownlees2010volatility
+Warning--page numbers missing in brownlees2010volatility
+Warning--no number and no volume in engle2014dynamic
+Warning--page numbers missing in engle2014dynamic
+You've used 13 entries,
+            2861 wiz_defined-function locations,
+            702 strings with 7152 characters,
+and the built_in function-call counts, 8489 in all, are:
+= -- 728
+> -- 619
+< -- 0
++ -- 187
+- -- 222
+* -- 732
+:= -- 1579
+add.period$ -- 38
+call.type$ -- 13
+change.case$ -- 93
+chr.to.int$ -- 12
+cite$ -- 21
+duplicate$ -- 215
+empty$ -- 496
+format.name$ -- 257
+if$ -- 1549
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 10
+newline$ -- 67
+num.names$ -- 128
+pop$ -- 57
+preamble$ -- 1
+purify$ -- 168
+quote$ -- 0
+skip$ -- 248
+stack$ -- 0
+substring$ -- 418
+swap$ -- 67
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 256
+warning$ -- 8
+while$ -- 128
+width$ -- 0
+write$ -- 170
+(There were 8 warnings)

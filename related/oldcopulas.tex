@@ -1,0 +1,362 @@
+\input{preamble}
+
+\section*{Copulas}
+A copula is a probability distribution $C$ on the unit hypercube with uniform marginals.  Given a vector $F_*$ of marginal distributions\footnote{Formally $F_*(y)$ has components $F_i(y_i)\equiv F(y_i^\infty)$ where $y_i^\infty\equiv(\infty,\ldots,y_i,\ldots\infty)$} and copula $C$ define $F_C$ as follows\footnote{The composition $G\circ H$ of two functions $G$ and $H$ is defined as $(G\circ H)(x)\equiv G\{H(x)\}$ for all $x$.} \begin{equation}\label{Fx}
+    F_C\equiv C\circ F_*\ .
+\end{equation}
+This is  a joint distribution\footnote{Since $(C\circ F_*)_*(y)$ has components $(C\circ F_*)(y_i^\infty)=C\{F_*(y_i^\infty)\}=C_i\{F_i(y_i)\}=F_i(y_i)$} with the given marginals $F_*$  Conversely given a joint distribution $F$ with marginals $F_*$ and $F_*^-$ as the componentwise inverse to $F_*$ define
+\begin{equation}\label{Cu}
+    C_F\equiv F\circ F_*^-\ .
+\end{equation}
+This is a copula, the copula of $F$.   Further
+$$
+F_{C_F}= C_F\circ F_*= F\circ F_*^-\circ F_*=F\ , \qquad C_{F_C}=F_C\circ (F_C)_*^-=C\circ F_*\circ  F_*^-=C\ .
+$$
+Hence (Sklar's theorem) $F_C=F$ iff $C_F=C$.  
+
+\subsubsection{Copula properties} 
+\begin{itemize}
+    \item  Each component of $F_*$ is arrived at by setting all arguments, other than the current, to $\infty$.  Further
+     $F_*^-$ depend only on the corresponding component of the argument.
+     \item If $y\sim C\circ F_*$ then $y=F_*^-u$ where $u\sim C$.
+    \item  If $H_*$ is the componentwise  vector of univariate monotonic functions then
+$$
+C_{F\circ H_*^-}\equiv F\circ H_*^- \circ(F\circ H_*^-)_*^-=F \circ F_*^-\equiv C_F\ .
+$$
+Hence copulas are invariant to monotonic deformations along each axis. 
+    \item The density associated with $C_F=F\circ F_*^-$ is
+    $$
+    \frac{f\circ F_*^-}{\Pi (f_*\circ F_*^-)}\ ,
+    $$
+    where $f$ is the density associated with $F$ and $f_*$ is the vector of marginal distributions.  If $f=\Pi f_*$ (ie independence) then $f\circ F_*^-=\Pi (f_*\circ F_*^-)$ and the density is identically 1.
+    \item The Gaussian copula with correlation matrix $R$ is the copula $C_{\Phi^R}$  where $\Phi^R$ is the Gaussian distribution with mean 0 and covariance matrix $R$.   Since $R$ is a correlation matrix, $\Phi^R_*=\Phi_*$, a vector of standard normal distributions, and $C_{\Phi^R}=\Phi^R\circ \Phi_*^-$.   The meta--Gaussian model is
+\begin{equation}\label{metaG}
+y = F_*^-u\ , \qquad u\sim\Phi^R\circ\Phi_*^-\qquad\Leftrightarrow\qquad y =(F_*^-\circ\Phi_*^-)\sqrt{R}\eps\ , \qquad \eps\sim \Phi^I\ .
+\end{equation}
+Typically $R$ is estimated using the average cross product matrix of  the normits  $(\Phi_*^-\circ F_*) y$.
+   
+\item The independence and perfectly dependent copulas is defined as $\Pi\equiv\Pi\ 1_*$ and $\vee\equiv\min$ respectively, where $1_*$ indicates the vector of identity functions.  These arise as follows:
+$$
+C_{\Pi F_*}\equiv(\Pi F_*)\circ F_*^-= \Pi\ 1_*\ ,\qquad C_{\vee}=\ .
+$$
+The perfectly dependent copula implies a single source of noise: 
+$y=F_*^-1u$ with $u\sim U$
+where $1$ is a vector of  identity functions of one variable.
+\end{itemize}
+
+\section{Mortality smoothing}
+
+There are two ways of applying copulas to mortality smoothing:
+\begin{enumerate}
+    \item The copula $C$ models correlation across age and $u\sim C$ is a ``time" draw. Age specific  behavior across time defines the components of $F_*$.  The age profiles are generated according to $y=F_*^-u$ with $u\sim C$ and different draws correspond to different times. Marginals in $F_*$ corresponding to each age  are estimated from the ergodic average
+$
+\hat F_*(s) =\Ex[y<s]
+$, where $\Ex$ denotes the ergodic average.
+Special cases are:
+    \begin{enumerate}
+        \item Time profiles do not vary with age implying each marginal in $F_*$ is the same.  Hence $F_*=1\odot h$ and $h$ would be estimated as $\hat h(s)\equiv\Ex\{\hat F_*(s)\}=\Ex\{\Ex[y<s]\}$ where the outer expectation is the ensemble average.
+        \item \label{pd} Perfect dependence across age implies all the time series are driven by a single source of noise: $y= F_*^-1u$ where $u\sim U$.
+        \item \label{ind} Independence across age implies $ y= F_*^-u$  where $u\sim \Pi$.  This model invokes the unlikely assumption that each age moves independently over time.
+        \item   Intermediate cases are  $ y=F_*^-u$ with $u\sim C$.   With the meta--Gaussian model, the correlation matrix $R$ models the correlation between ages and generally the correlation between close ages is  higher.   An extreme case is where the correlation between ages $i$ and $j$ is $\rho^{|i-j|}$ for $0\le\rho\le 1$.  The case $\rho=1$ is equivalent to \ref{pd} while $\rho=0$ to \ref{ind} above.
+    \end{enumerate}        
+    \item The copula $C$ models serial correlation and $u\sim C$ is an ``age" draw.  Time specific mortality curves are the components in $F_*$.   The time series profiles $y$ of mortality are generated  according to $y=F_*^-u$ where $u\sim C$ and different draws correspond to different ages.  Marginals in $F_*$ corresponding to each $t$ are estimated from the ensemble (age profile) data at time $t$, $\hat F_*(k)\equiv\Ex[y<k]$ where the expectation is empirical average is across the (age) different draws.
+Special cases are:
+\begin{enumerate}
+    \item Age profiles do not vary with time implying each marginal in  $F_*$ is the same.  Hence $F_*=1\odot h$ where $h$ is univariate and $(1\odot h) y$ applies $h$ componentwise.  Thus $y=(1\odot h)^-u=(1\odot h^-)u$.  Map $h$ is estimated from the ergodic average of the empirical ensemble (age profile) distributions
+$
+\hat h(k)\equiv \Ex\{\hat F_*(k)\}=\Ex\{\Ex[y<k]\}
+$ where the outer $\Ex$ works across the components of the vector.
+    \item Perfect serial dependence implies $y= F_*^-1u$ where $u\sim U$. Combined with a single age profile yields $y=(1\odot h^-)1u=1h^-u$ with $u\sim U$.  To estimate $h$ is $\hat h(k)=\Ex\{\Ex[y<k]\}$.   
+    \item Matrix $R$ in the meta--Gaussian model is a time series covariance matrix.  The correlation matrix is estimated from the $z\equiv(\Phi_*^-\circ F_*)y$ as
+$
+\hat R = \Ex(zz')
+$.
+Note $z\sim \Phi^R$ and $(\Phi^R)_*=\Phi_*$.  In the fixed mortality curve situation $z=\{\Phi_*^-\circ(1\odot h)\}y$.  Thus each component of $y$ is transformed by $h$.  And $h$ would be estimated as $\hat h(k)\equiv\Ex\{\Ex[y<k]\}$.
+
+\item    With the meta--Gaussian model the stationary AR(1) case  is where entry $(t,s)$ of $R$ is $\rho^{|t-s|}$ where $0\le\rho\le 1$.  This meta--Gaussian model combined with a fixed mortality curve implies 
+$$
+y=\{(1\odot h^-)\circ \Phi_*^-\}\sqrt{R}\eps\ , \qquad \eps\sim \Phi^I\ .
+$$
+Given observed time profiles $y$ for each age, the matrix $R$ is estimated by first transforming to normits 
+$
+z=\{\Phi_*\circ(1\odot h)\}y
+$ and $\hat R = \Ex(zz')$.  The estimate of $\rho$ is $\Ex(r_{t,t-1})$ where the average is over $t$. 
+\end{enumerate}     
+\end{enumerate}    
+
+
+
+\section{Usefulness of copulas in applied work}
+
+ The above indicates there are two ways of thinking about copulas:
+\begin{enumerate}
+    \item As a way of generating a joint from given marginals.
+    \item As a way of writing the joint in terms of its marginals.
+\end{enumerate}    
+In applied work the first seems to be the most important.   In other words given marginals can be ``moulded" into many different joint distributions through choice of an appropriate copula.
+
+
+
+
+ is first adjusted by the use of explanatory variables to indicate it is coming from different populations.
+
+\subsubsection{Normit modelling}
+
+Suppose the joint distribution of $\psi(x)$ and $\psi(y)$ is bivariate normal with correlation $\rho$.   Then since $\psi(x)$ and $\psi(y)$ are standard normal  
+$\rho=\E\{\psi(y)\psi(x)\}$.
+
+For example using claim size and settlement delay as an example then the correlation between the normits is 0.68.   Hence
+$$
+\psi(\hat y)=0.68\psi(x)\qquad\Rightarrow\qquad  F(\hat y) =\Phi\{0.68\psi(x)\}\ .
+$$
+That is, given $x$  the prediction $\hat y$ has predicted quantile $\Phi\{0.68\psi(x)\}$.  The actual prediction $\hat y$ is determined by going into the distribution of $y$ and picking out the value corresponding to the predicted quantile.
+
+\subsubsection{Simulating from Gaussian copula}
+
+To simulate we just generate standard normals with a given correlation matrix.   That is suppose the correlation is $\rho$ then given two standard normals $z_1$ and $z_2$ we form
+$$\left(%
+\begin{array}{c}
+  \psi(x) \\
+  \psi(y) \\
+\end{array}%
+\right)=
+\left(%
+\begin{array}{cc}
+  1 & \rho \\
+  \rho & 1 \\
+\end{array}%
+\right)^{1/2} \left(%
+\begin{array}{c}
+  z_1 \\
+  z_2 \\
+\end{array}%
+\right)
+$$ 
+We now form $\Phi\{\psi(x)\}$ and $\Phi\{\psi(y)\}$
+
+\subsubsection{Runoff triangles}
+
+Think of each row as a distribution $F_i(j)$ where $i$ is the accident year and $j$ the development year.  We can convert this to normits by taking $\psi_i(j)\equiv\Phi^{-1}\{F_i(j)\}$.  We now study the correlations across the rows.  Trouble is we don't know the quantiles.
+
+Note $\psi_1(n)=$
+
+Now take the slope
+$$
+\psi_i(j) = a_i+b_ij
+$$
+
+
+\subsubsection{Joint distribution under Gaussian copulas}
+
+
+
+
+We want to find the joint distribution of $(x,y)$.  The general result about this sort of thing is as follows.   If $(x^*,y^*)$ has density $f(x^*,y^*)$ and $(x^*,y^*)=\phi(x,y)$ is one--to--one, then the joint density of $(x,y)$ is
+$$
+f\{\phi(x,y)\}\left|\frac{\partial \phi(x,y)}{\partial (x,y)}\right|=f\{\psi(x),\psi(y)\}\dot\psi(x)\dot\psi(y)\ ,
+$$
+Now
+$$
+\dot\psi(x) = \frac{\partial x^*}{\partial x^\dag}\frac{\partial x^\dag}{\partial x}= \left(\frac{\partial x^\dag}{\partial x^*}\right)^{-1}\frac{\partial x^\dag}{\partial x}=\left\{\frac{\partial \Phi(x^*)}{\partial x^*}\right\}^{-1}\frac{\partial x^\dag}{\partial x}=\sqrt{2\pi}\exp\left\{\frac{\psi^2(x)}{2}\right\}f(x)
+$$
+Hence if $f\{\psi(x),\psi(y)\}$ is bivariate standard normal with correlation $\rho$ then
+the joint density  of $(x,y)$ is
+$$
+f(x,y)=\frac{1}{1-\rho^2}\exp\left\{\frac{\psi^2(x)+\psi^2(y)}{2}-\frac{\psi^2(x)-2\rho\psi(x)\psi(y)+\psi^2(y)}{2(1-\rho^2)}\right\} f(x) f(y)
+$$$$
+=\Phi\{\psi(x),\psi(y)\}f(x)f(y)
+$$
+where $f(x)$ and $f(y)$ are the marginal densities of $x$ and $y$ and
+$$
+\Psi_\rho(u,v)= \frac{1}{1-\rho^2}\exp\left\{-\frac{\rho^2(u^2+v^2)-2\rho uv}{2(1-\rho^2)}\right\}\ .
+$$
+
+Note the marginals are $f(x)$ and $f(y)$ for any choice of $\rho$ and if $\rho=0$ then the joint density is $f(x)f(y)$, as expected. Further since $f(x,y)=f(x)f(y|x)$ it follows
+$$
+f(y|x)=\Psi_\rho\left\{\psi(x),\psi(y)\right\}f(y)\qquad\Rightarrow\qquad \frac{f(y|x)}{f(x|y)}=\frac{f(y)}{f(x)}\ .
+$$ 
+
+\subsubsection{Sampling from the density}
+
+Differentiating  $\Psi_\rho(u,v)$ with respect to $v$ yields 
+$$
+\Psi_\rho(u,v)\frac{\rho(\rho v- u)}{(1-\rho^2)}\ .
+$$ 
+Thus the maximum occurs at $v=u/\rho$ in which case 
+$$
+\Psi_\rho(u,v)=\frac{1}{1-\rho^2}\exp\left\{\frac{-u^2(1+\rho^2)+2u^2}{2(1-\rho^2)}\right\}=\frac{1}{1-\rho^2}\exp\left(\frac{u^2}{2}\right)\ .
+$$
+Thus 
+$$
+f(y|x)\le \frac{1}{1-\rho^2}\exp\left\{\frac{\psi^2(x)}{2}\right\}f(y) \ .
+$$
+Hence the ratio of the left to right hand side is
+$$
+\frac{\Psi_\rho\left\{\psi(x),\psi(y)\right\}}{\frac{1}{1-\rho^2}\exp\left\{\frac{\psi^2(x)}{2}\right\}}=\exp\left\{-\frac{\psi^2(x)}{2}-\frac{\rho^2\psi^2(x)+\rho^2\psi^2(y)-2\rho \psi(x)\psi(y)}{2(1-\rho^2)}\right\}  
+= \exp\left[-\frac{\{\psi(x)-\rho\psi(y)\}^2}{2(1-\rho^2)}\right]
+$$
+Thus a rejection algorithm for generating samples from the joint is
+\begin{enumerate}
+    \item  $x\sim f(x)$
+    \item Repeat $y\sim f(y)$ and $u \sim U(0,1)$ until $$
+    \ln(u) < \frac{-\{\psi(x)-\rho\psi(y)\}^2}{2(1-\rho^2)}\ .
+    $$
+\end{enumerate}
+The resulting draw $(x,y)$ is a draw from $f(x,y)$ generated using the Gaussian copula.   Note that if $\rho\approx 1$ then $u$ must be very small to get an accepted $y$.  If $\rho=0$ then $y$ is accepted if $\ln(u)<-\psi^2(x)/2$.  Since this latter condition makes no reference to $y$, all draws $y$ can be accepted.
+
+Since $\psi(x)$ and $\psi(y)$ are standard normal we can just generate lots of these and only accept those meeting the condition in 2.
+
+\section{What copula is appropriate?}
+
+Suppose we have data vectors $x_1,\ldots,x_n$.  Corresponding to the measurements calculate the quantiles $u_1,\ldots, u_n$ or, in the case of the Gaussian copula, the normits, $z_1,\ldots,z_n$. We study the behavior of the  
+
+$F_*(x)$ denotes the vector of fitted marginals.  Then convert the data to quantiles
+
+\section{Archimedean copulas}
+
+These are of the form
+$$
+C(u,v)=A^-\{A(u)+A(v)\}
+$$
+
+
+\section{Reserving}
+Suppose the correlation between $\psi(y)$ and $\psi(x)$ is $\rho$ and suppose the two transformed variables are jointly normal.   We want to find $c_\alpha$ such that
+$$
+P(x+y<c_\alpha)=\alpha\ .
+$$
+One approach is
+$$
+\int_x\int_y \Psi_\rho\left\{\psi(x),\psi(y)\right\}f(x)f(y)\ .
+$$
+
+Lets see if we can find the joint distribution of $(x,y)$ given the joint distribution of $\{\psi(x),\psi(y)\}$.
+
+\section{Calculations} 
+In this case $\phi(x,y)=\{\psi(x),\psi(y)\}$ and  the determinental term is $\psi(x)\psi(y)$.
+is the density of 
+in this case $z=(x^*,y^*)'=\{\psi(x),\psi(y)\}'$ and $h(z)=(x,y)'=\{\psi^{-1}(x^*),\psi^{-1}(y^*)\}$.   Thus $h^{-1}(z)=$
+$$
+\left|\frac{\partial h^{-1}(z)}{\partial z}\right| = \left|\right|
+$$
+In general terms define $\Omega_c=\{(x,y):x+y<c\}$
+
+
+ and
+$$
+\E\{\psi(y)|x\}=\rho\psi(x)\ , \qquad Var\{\}
+$$
+$$
+\E(y|x)=\tilde F_y^{-1}[\Phi\{\rho\psi(x)\}]\ , \qquad Var\{\}
+$$
+But the left hand side is approx
+$$
+\E\{\phi(\mu_{y|x})+\dot\phi(\mu_{y|x})(y-\mu_{y|x})|x\} = \phi(\mu)+\dot\phi(\mu)\{\E(y|x)-\mu\}\ .
+$$
+This implies
+$$
+\E(y|x)\approx\mu+\frac{\rho\phi(x)-\phi(\mu)}{\dot\phi(\mu)}\ .
+$$
+Thus to calculate the conditional expectation of 
+
+
+
+To calculate this redefine $y$ to be two dimensional and with $y^*=\phi(y)$
+
+
+for any $0<\alpha<1$ we can find $c_\alpha$ such that
+$$
+P\{\phi(y)+\phi(x)<c_\alpha\}=\alpha\ .
+$$
+The issue is to compute the region $\{(y,x): \phi(y)+\phi(x)<c_\alpha\}$.
+
+One way of computing the region is:
+\begin{itemize}
+    \item Pick random $(y^*,x^*)$ and check if $y^*+x^*<c_\alpha$
+    \item If in the region then compute $y=\phi^{-1}(y^*)$ and $x=\phi^{-1}(x^*)$ 
+    \item 
+\end{itemize}     
+
+We now try and model the relationship between $y^*$ and explanatory variables $x^*$. Consider the normal model 
+$$
+y^* \sim N({x^*}'\beta,\sigma^2)\ .
+$$
+We fit the model and obtain predictions $\hat y^*$ and in turn $\hat y^\dag=\Phi(\hat y^*)$.  This is a prediction of the percentile of $y$ from the percentiles of $x$.  Note that the fitted vector $\hat\beta$ will be a vector of partial correlations.
+
+Suppose now $y$ is a vector of variables (not observations).  We want the distribution of $\iota'y$ representing the total liability.  We can measure/infer the distribution of normalized scores $y^*$.   In particular $y^*\sim N(0,\Sigma)$ where $\Sigma$ is a correlation matrix since it has all 1's on the diagonal.  Thus the distribution of $\iota'y^*$ is $N(0,\iota'\Sigma\iota)$.   The $\alpha$ percentile is given by $z_\alpha\sqrt{\iota'\Sigma\iota}$ where $z_\alpha$ cuts out the required probability in a standard normal:
+$$
+P(\iota'y^*<z_\alpha\sqrt{\iota'\Sigma\iota})=\alpha\ .
+$$
+
+How do we convert this to a probability statement on the actual total $\iota'y$?  That is we want the set  
+$$
+\Omega_\alpha = \left\{y : \iota'y^*<z_\alpha\sqrt{\iota'\Sigma\iota}\right\}\ .
+$$
+Note that the set of $y^*$ satisfying the region is not a quadrant and the normal is centred on zero with unit variances.
+One way of doing this is to see where each $y^*$ comes from.   
+
+For example in the two dimensional case this is 
+
+ In moving from the original data $y_i$ to $y_i^\dag$ and $y_i^*$ we lose all information about location and scale.  Lets have a separate model for that.
+
+Since  $y^\dag=\Phi(y^*)=\pi(y)$.  Hence the density of $\pi(y)$ is uniform with mean 0.5.
+$$
+\frac{\partial \Phi^{-1}(y^*)}{\partial y^*} \exp\left\{-\frac{(y^*-{x^*}'\beta)^2}{2\sigma^2}\right\}= 
+$$
+ 
+
+For given data we can then consider a normal model 
+$$
+y^* \sim N({x^*}'\beta,\sigma^2)\ .
+$$
+But $\Phi(y^*)=\pi(y)$.  Hence the density of $\pi(y)$ is uniform with mean 0.5.
+$$
+\frac{\partial \Phi^{-1}(y^*)}{\partial y^*} \exp\left\{-\frac{(y^*-{x^*}'\beta)^2}{2\sigma^2}\right\}= 
+$$
+
+Thus the log--density of $y^*$ is proportional to 
+$$
+\frac{y*}{}
+$$
+
+The copula approach is to design a distribution on the unit hypercube $C(u)$ with uniform marginals.  Consider first 
+the bivariate case.  Then $C(u,v)$
+
+An alternative is to use the $\phi(y_i)$.  That is we just give them a covariance matrix.
+
+Since the former are probabilities it is convenient to turn them into logits.
+
+
+
+  Similarly let $z(y)$ be the ``zscore" of $y$, meaning we calculate the uniform then find $z$ such that
+$$
+z(y)=\Phi^{-1}\{u(y)\}\ ,\qquad z(y_i)=\Phi^{-1}\left\{\frac{1}{n} \sum_{j=1}^n[y_j<y_i]\right\}\ .
+$$
+This is different from the usual z--score calculated as
+$$
+\frac{y-\bar y}{s_y}
+$$
+
+
+For example suppose the relationship between the percentiles of two variables can be adequately described by 
+$$
+u(y) \approx \beta_0 + \beta_1 u(x)\ ,
+$$
+or from a glim perspective
+$$
+\E\{U(y)\}=\beta_0+\beta_1 U(x) \ , \qquad Var\{U(y)\}=\gamma_0+\gamma_1 U(x)+\gamma_2 U^2(x)\ .
+$$
+\section{Example copulas}
+
+\subsubsection{Independence copula.}   Here $C(u)=\prod_ju_j$.   This would imply there is no correlation between the percentiles.  
+
+\section{Estimating copulas}
+
+Copulas can be estimated by first using the percentile transform each variable.   Then plot these percentiles against each 
+other.   What is the joint distribution of the percentiles.   One approach is  
+The way to estimate copulas is to 
+In many cases we observe the variables and have some information on the joint distribution.
+
+Different copulas induce different dependence structure.   
+
+\end{document} 

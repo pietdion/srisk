@@ -1,0 +1,123 @@
+\documentclass[authoryear]{elsarticle}
+\usepackage{latexsym}
+%\usepackage{rotate}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{comment}
+\bibliographystyle{chicago}
+
+
+
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\I}{\mathrm{I}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\vecm}{\mathrm{vec}}
+\newcommand{\kp}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\obdots}{\ddots}    % change this later
+\newcommand{\Ex}{{\cal E}}
+\newcommand{\rat}{{\frac{c_{ij}}{c_{i,j-1}}}}
+\newcommand{\rmu}{m}
+\newcommand{\rsig}{\nu}
+\newcommand{\fd}{\mu}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\cor}{\mathrm{cor}}
+\newcommand{\bx}[1]{\ensuremath{\overline{#1}|}}
+\newcommand{\an}[1]{\ensuremath{a_{\bx{#1}}}}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\renewcommand{\i}{\item}
+\newcommand{\sr}{\ensuremath{\mathrm{SRISK}}}
+\newcommand{\cs}{\ensuremath{\mathrm{CS}}}
+\newcommand{\cri}{\ensuremath{\mathrm{Crisis}}}
+\newcommand{\var}{\ensuremath{\mathrm{VaR}}}
+\newcommand{\covar}{\ensuremath{\mathrm{CoVaR}}}
+\newcommand{\med}{\ensuremath{\mathrm{m}}}
+\newcommand{\de}{\mathrm{d}}
+\renewcommand{\v}{\ensuremath{\mathrm{v}_q}}
+\newcommand{\m}{\ensuremath{\mathrm{m}}}
+\newcommand{\tvar}{\ensuremath{\mathrm{TVaR}}}
+
+
+
+\newcommand{\eref}[1]{(\ref{#1})}
+\newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\sref}[1]{\S\ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
+\newcommand{\aref}[1]{Appendix \ref{#1}}
+
+
+
+
+\newcommand{\cq}{\ , \qquad}
+\renewcommand{\P}{\mathrm{P}}
+\newcommand{\Q}{\mathrm{Q}}
+
+\newcommand{\Vx}{{\cal V}}
+\newcommand{\be}[1]{\begin{equation}\label{#1}}
+\newcommand{\ee}{\end{equation}}
+
+
+
+
+\begin{document}
+
+
+\section{Bivariate case}
+
+Univariate stressing leads to the stressed put expectation
+$$
+\E\{\phi(r_m)p_{it}\} = \int  f(r_m)\phi(r_m)\E(p_{it}|r_m) \de r_m = \int f_\phi(r_m) \E(p_{it}|r_m) \de r_m
+$$
+where $f$ is the original density of a market factor $r_m$ and $f_\phi=f\times \phi$ is the assumed density. Note $\phi$ may act on $r_m$ or its percentile rank $u_m$. The intent of $\phi$ is the enlarge the likelihood of ``bad" outcomes of $r_m$.
+
+Bivariate stressing yields
+$$
+\E\{\phi(r_m,r_n)p_{it}\} = \int \int f(r_m,r_n)\phi(r_m,r_n) \E(p_{it}|r_m, r_n) \de r_m \de r_n
+$$
+$$
+= \int \int f_\phi(r_m,r_n) \E(p_{it}|r_m, r_n) \de r_m \de r_n
+$$
+where $r_n$ is another market factor and $f$ is now the joint density of $(r_m,r_n)$. The assumed joint density is $f_\phi=f\times \phi$, which again enlarges the joint likelihood of ``bad" outcomes of $(r_m,r_n)$. For example $f_\phi$ may have stronger tail dependence than $f$, which can be achieved by either selecting a copula which has stronger tail dependence, or setting up $\phi$ as $\phi(u_mu_n)$ where $\phi$ is decreasing. Marginal distributions of $r_m$ and $r_n$ may be altered or unchanged. If unchanged then
+$$
+f(r_n) = \int f(r_m,r_n) \de r_m = \int f_\phi(r_m,r_n) \de r_m
+$$
+or 
+$$
+1 = \int f(r_m)c(u_m,u_n) \de r_m = \int f(r_m)\phi(r_m,r_n) c(u_m,u_n) \de r_m
+$$
+since $f(r_m,r_n)=f(r_m)f(r_n)c(u_m,u_n)$.
+
+
+\subsection{Copula stressors}
+
+\newcommand{\Es}{\E_\phi}
+
+Stressing can be based on a vector of variables $x$ with distribution $F(x)=u$.   Given a copula $\Phi(u)$ with density $\phi(u)$ consider
+the stressed expectation 
+\be{copula}
+\Es(p_{it}) \equiv \int \E(p_{it}|x)  \de\Phi\{F(x)\}  =  \E\{\phi(u)\E(p_{it}|x)\}  \ ,
+\ee
+The  copula $\Phi(u)$ is designed to magnify  stressful situations such as  where all components of $x$ are abnormally low.
+If $\Phi(u)=u$ then $\phi(u)=1$ and $\Es(p_{it})=\E(p_{it})$.  
+
+For example $\Phi\{F(x)\}$ may have stronger tail dependence than $F$.   In the extreme  $\Phi(u)=\min_i(u_i)$ making all  variables in $x$  comonotonic.   The copula $\Phi(u)$  leaves marginals intact and acts as a stressor on the copula  $c(u)$  corresponding to $F$ since
+$$
+\de\Phi\{F(x)\} = \phi(u)c(u)\prod_if_i(x_i)\ ,
+$$
+where the $f_i$ are the  marginal densities of $F$.   Further marginal stress is induced by allowing $\Phi(u)$ to have non--uniform marginals in which case
+$$
+\de \Phi(u) = \phi(u)\prod_i\phi_i(u_i)\de u\ ,
+$$
+where $\phi(u)$ has, as before, uniform marginals and the $\phi_i(u_i)\ge 0$ induce non--uniformity in each of the marginals subject to $\E\{\phi_i(u_i)\} = 1$.  
+
+   
+\end{document}

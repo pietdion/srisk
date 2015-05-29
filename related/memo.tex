@@ -1,0 +1,44 @@
+%\include{preamble}
+%define title
+\documentclass[12pt,a4paper]{article}
+\newcommand{\e}{\mathrm{e}}
+\title{Stress testing, monte carlo simulation and scenario analysis}
+\begin{document}
+
+\maketitle
+
+Stress testing is used in the context of the measurement of bank capital adequacy and reserving for market risk, in conjunction with Value at Risk. Value at Risk is essentially an estimate of the quantile of the distribution of the change in value of a portfolio of financial instruments. In order to do a VaR calculation, you need to specify a joint distribution for the instrements in the portfolio.
+
+Stress testing involves estimating how a portfolio would perform under some ``extreme market movements". It is a form of scenario analysis. It is a way of taking into account extreme events that do occur from time to time but which are virtually impossible according to the probability distributions assumed for the variables that impact on the portfolio value. For example a 5 standard deviation daily move in a market index (e.g. the s\&p 500 stock market index) is one such extreme event. Under the assumption of a normal distribution this would happen about once every 7000 years, but in practice such movements are observed once or twice every 10 years.
+
+An example of stress testing for banks is stress testing of interest rates for the value of their portfolio of bonds and debt securities. The bank may use scenarios that specify a change in the yield curve which is a combination of the effects of a parallel shift, and a change in the slope of the yield curve (e.g. so that long term yields rise by more than short term ones), and a "curvature in the yield curve" to allow for various different yield curve shapes. Another example is in stress testing a portfolio of foreign exchange instruments (such as forwards, futures, swaps, options and spot positions). It is possible to devise scenarios for changes in both the exchange rates and the volatility of exchange rates.
+
+Stress testing can involve simple 1 factor scenarios (sensitivity analysis), complex multifactor scenarios, or a full blown monte carlo simulation.
+
+We adapt the ideas in stress testing for banking and use them in the context of insurance reserving and the aggregation of distributions of the outstanding claims reserves of different classes of insurance
+
+The task is to combine the distributions of the outstanding claims liability  for several classes of insurance into a single overall distribution of the outstanding claims liability.
+
+In practice there is limited data or information on which to base a probability distribution for the outstanding claims liability for even a single class of insurance.
+
+Natural candidates are the normal distribution, the lognormal distribution, the t distribution and the ``log t-distribution".
+
+When it comes to combining the distributions into an overall aggregate distribution there is limited data available and it is difficult to know what joint distribution applies.
+Using the ideas from stress testing / scenario analysis and monte carlo simulation, we can model statistically the joint distribution by making up a scenario.
+
+We can propose a scenario for the distributions of the outstanding claims liabilities, and propose a scenario for different copulas to combine these distributions into an overall joint distribution. Using mc simulation we can turn these scenarios into a distribution of the overall liability (to get the distribution of the sum of the different random variables).
+
+The outstanding claims liability is a function of
+1.	the claims experience, i.e. the claim frequency and claim size distribution
+2.	the claims development experience: the time lags involved in the typical pattern of claim payments
+3.	the rate of interest used in discounting the projected claim payments to a present value
+4.	the rate of inflation used in projecting the future claim payments
+5.	rates of superimposed inflation
+
+The economic variables used in the estimation of the outstanding claims liability would be common to all the different classes of business. In particular the interest rates and the inflation rate would be common. The rate of superimposed inflation would probably vary from one class of business to another. Other aspects of the problem may be more specific to the class of insurance: the claim frequency, claim size and claim payment patterns involved.
+
+What we want for reserving purposes is an estimate of the quantiles / percentiles of the aggregate outstanding claims liability
+
+Hello there
+
+\end{document}

@@ -1,0 +1,495 @@
+\documentclass[authoryear]{elsarticle}
+\usepackage{latexsym}
+%\usepackage{rotate}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{comment}
+\bibliographystyle{chicago}
+
+
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\I}{\mathrm{I}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\vecm}{\mathrm{vec}}
+\newcommand{\kp}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\obdots}{\ddots}    % change this later
+\newcommand{\Ex}{{\cal E}}
+\newcommand{\rat}{{\frac{c_{ij}}{c_{i,j-1}}}}
+\newcommand{\rmu}{m}
+\newcommand{\rsig}{\nu}
+\newcommand{\fd}{\mu}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\cor}{\mathrm{cor}}
+\newcommand{\bx}[1]{\ensuremath{\overline{#1}|}}
+\newcommand{\an}[1]{\ensuremath{a_{\bx{#1}}}}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\renewcommand{\i}{\item}
+\newcommand{\sr}{\ensuremath{\mathrm{SRISK}}}
+\newcommand{\cs}{\ensuremath{\mathrm{CS}}}
+\newcommand{\cri}{\ensuremath{\mathrm{Crisis}}}
+\newcommand{\var}{\ensuremath{\mathrm{VaR}}}
+\newcommand{\covar}{\ensuremath{\mathrm{CoVaR}}}
+\newcommand{\med}{\ensuremath{\mathrm{m}}}
+\newcommand{\de}{\mathrm{d}}
+\renewcommand{\v}{\ensuremath{\mathrm{v}_q}}
+\newcommand{\m}{\ensuremath{\mathrm{m}}}
+\newcommand{\tvar}{\ensuremath{\mathrm{TVaR}}}
+\newcommand{\mes}{\ensuremath{\mathrm{MES}}}
+\newcommand{\es}{\ensuremath{\mathrm{ES}}}
+\newcommand{\lmes}{\ensuremath{\mathrm{LRMES}}}
+\newcommand{\coes}{\ensuremath{\mathrm{CoES}}}
+\newcommand{\cat}{\ensuremath{\mathrm{CATFIN}}}
+\newcommand{\sged}{\ensuremath{\mathrm{SGED}}}
+\newcommand{\gpd}{\ensuremath{\mathrm{GPD}}}
+
+\newcommand{\eref}[1]{(\ref{#1})}
+\newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\sref}[1]{\S\ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
+\newcommand{\aref}[1]{Appendix \ref{#1}}
+
+
+
+
+\newcommand{\cq}{\ , \qquad}
+\renewcommand{\P}{\mathrm{P}}
+\newcommand{\Q}{\mathrm{Q}}
+
+\newcommand{\Vx}{{\cal V}}
+\newcommand{\be}[1]{\begin{equation}\label{#1}}
+\newcommand{\ee}{\end{equation}}
+
+
+
+
+\begin{document}
+
+\renewcommand{\cs}{\ensuremath{\mathrm{CS}}}
+
+\section{Zeta score modelling}
+
+The zeta score of an observation $x_i$ is $\zeta_t\equiv (\Phi^-\circ  \P)r_t$ where $\P$ denotes the empirical percentile and $\Phi$ the standard normal distribution.   By construction the $\zeta_i$ are normally distributed and hence should be particularly amenable to modelling.
+
+  How is time dependence modelled   with a copula?  One way is to plot percentiles $(u_{it},u_{i,t-1})$ for each $i$ or $(\zeta_{it},\zeta_{i,t-1})$
+
+\cite {Engle2014} use data  on  196 large financial institutions in Europe: banks, insurance companies, financial services firms and real estate firms; daily equity returns and market capitalization from Datastream; quarterly book values for equity and debt from Compustat; world and Europe equity indexes from MSCI
+\bi
+\i Period: 1990-2012 
+\i Econometric methods:  
+\bi
+\i estimate multi-factor, time varying model of returns using Dynamical Conditional Betas,
+\cite{Engle2014dcb}
+\i model volatility of errors using univariate asymmetric GARCH model
+\i use skewed $t$ distribution for marginals of the innovations and a \textit{t} copula for the dependence structure between the innovations
+\i estimation proceeds recursively from an international model [World and European indexes]; then country models [add in respective country index and use the parameters from the international model] then firm model [include firm returns and use parameters from country model]  
+\i directly estimate $\lmes$
+\bi
+\i simulate forward 125 days returns from model estimates
+\i use $S=50,000$ draws to compute
+$$\lmes_{jt}=\frac{\sum_{s=1}^{S}R_{jt+1:t+h}^{s} \times I(R_{mt+1:t+h}^{s} < -40\%)}{\sum_{s=1}^{S}I(R_{mt+1:t+h}^{s}<-40\%)}$$
+where $I(x)=1$ if true and 0 otherwise.
+where $I(x)=1$ if true and 0 otherwise.
+\ei 
+\ei 
+
+\i Results:
+\bi
+\i rank firms, firm types and countries by $\sr$: banks contribute 83\% insurance companies 15\% of systemic risk in Europe; highest countries - France and UK contribute 52\%
+\i aggregate $\sr$ Granger-causes industrial production and business confidence index
+\i $\sr$ is positively related to changes in 3-month interbank rate but not significantly related to stock market return and volatility.
+\ei
+\ei
+
+
+
+
+
+\section{$\covar$}
+
+\cite{adrian2011} propose $\covar$ which is the $\var$ of the financial system $m$ when financial institution $j$ is in distress which is operationally defined as its $\var(q)$ level. 
+$$\text{Pr}(r_t^m\leq\covar_{qt}^{m|j}|r_t^j=\var_{qt}^j)=q.$$
+Increased risk to system $m$ when financial institution $j$ is in distress 
+$$\Delta \covar_{qt}=\covar_{qt}^{m|j}-\covar_{qt}^{m|b^j}$$ 
+where $b^j$ denotes the benchmark state for $j$ and equals its median return.
+
+\cite{Girardi2013} suggest to condition on when financial institution $j$ is at its $\var$ level at best:
+$$\text{Pr}(r_t^m\leq \covar_{qt}^{m|j}|r_t^j\leq \var_{qt}^j)=q.$$ They define the benchmark state $b^j$ as a one standard deviation around the mean
+$$\mu_t^j - \sigma_t^j \leq r_t^j \leq \mu_t^j + \sigma_t^j.$$
+and measure the percentage systemic risk contribution of $j$ by
+$$\Delta \covar_{q,t}^{m|j}=100\times (\covar_{qt}^{m|j}-\covar_{qt}^{m|b^j})/\covar_{qt}^{m|b^j}.$$  \cite{Girardi2013} argue their measure improves on \cite{adrian2011} as it
+\bi
+\i is more general and relevant as it takes into account severity of tail losses
+\i facilitates back-testing of $\covar$ using standard back-tests for $\var$.
+\ei
+\cite{Mainik2012} also show the \cite{Girardi2013} measure is better 
+\bi
+\i it is consistent with respect to the dependence parameter unlike the \cite{adrian2011} measure which is not, e.g.in a bivariate Gaussian model, the \cite{adrian2011} measure is decreasing in the correlation! 
+\i consistency property also extends to Conditional Expected Shortfall [$\coes$]. 
+\ei 
+
+
+\subsection{\cite{adrian2011}}
+\bi
+\i Data: weekly equity returns of 357 US bank holding companies from CRSP; quarterly balance sheet data from Compustat; state variables: VIX, liquidity spread; change in T-bill rate; change in slope of yield curve; change in credit spread; controls - market equity return; return on real estate sector.
+\i Period:  1986-2010
+\i Econometric methods:  
+\bi
+\i use quantile regressions of asset returns to estimate $CoVaR$ 
+\i add lagged state variables for conditional results
+\i construct out-of-sample forward $\Delta \covar$ by projecting $\Delta \covar$ on lagged size, leverage, maturity mismatch and industry dummies
+\ei
+\i Results:
+\bi
+\i $\var$ and $\Delta \covar$ are weakly related in the cross section but strongly related over time
+\i $\Delta \covar$ larger for firms with higher leverage, more maturity mismatch and larger size
+\i strong negative correlation between contemporaneous $\Delta \covar$ and forward $\Delta \covar$
+\ei
+\ei 
+
+
+\subsection{\cite{Girardi2013}}
+\bi
+\i Data:  estimate $CoVaR$ and conduct back-tests using daily equity returns of 74 large US financial firms 
+\i Period:  2000-20087 
+\i Econometric methods:  
+\bi
+\i bivariate GARCH-DCC models assuming (i) bivariate Gaussian (ii) bivariate skewed-$t$ distributions
+\i 3-step procedure: 1. estimate individual $\var$ using univariate GARCH; 2. estimate bivariate density for returns using bivariate GARCH; 3. numerically solve $\covar$s
+$$\int_{-\infty}^{\covar_{qt}^{m|j}}\int_{-\infty}^{\var_{qt}^{j}}pdf_t(x,y)dydx=q^2$$
+$$\int_{-\infty}^{\covar_{qt}^{m|b^j}}\int_{\mu_t^j - \sigma_t^j}^{\mu_t^j + \sigma_t^j} pdf_t(x,y)dydx=p_t^j q.$$
+\ei
+
+\i Results:
+\bi
+\i backtests favour skewed-$t$ distribution 
+\i rank of contribution to systemic risk: depositary institutions [largest]; broker-dealers; insurance companies; non-depositary institutions [smallest]
+\i $\var$ and $\Delta \covar$ are weakly related cross sectionally and over time
+\i all industry groups showed substantial increase in pre crisis $\Delta \covar$ 
+\i $\Delta \covar$ is positively related to size and equity beta, and to leverage during down markets.
+\ei
+\ei 
+
+
+
+\section{$\cat$}
+
+\cite{Allen2012} create a macroindex of systemic risk designated $\cat$  which is the arithmetic average of three $\var$ measures using the Generalized Pareto distribution [$\gpd$], skewed generalized error distribution [$\sged$] and a nonparametric approach being the relevant quantile of the empirical distribution. 
+
+$$\var_{\gpd} =\mu + \left(\frac{\sigma}{\xi} \right) \left[  \left(\frac{\alpha N}{n} \right)^{-\xi} -1\right]  $$ where $\mu,\sigma,\xi$ are location, scale and shape parameters. $\alpha$ is loss probability level, $n$ is number of extremes and $N$ is total data points.
+
+Obtain $\var_{\sged}$ by solving numerically
+$$\int_{-\infty}^{\var_{\sged(\alpha)}}f_{\mu,\sigma,\kappa,\lambda}(z)dz=\alpha$$
+where $f$ is $\sged$ probability density function; $\kappa$ controls height and tails of the density and $\lambda$ is skewness.
+
+\cite{Allen2012} also create analogous measures for expected shortfall but report that the predictability results are similar.
+ 
+\subsection{\cite{Allen2012}}
+\bi
+\i Data:  monthly returns and market capitalization for US financial companies; Chicago Fed National Activity Index [CFNAI] and alternative macro-economic performance indicators; collect similar stock price data for EU and Asia and GDP growth rates 
+\i Period:  1973-2009  
+\i Econometric methods:  
+\bi
+\i use maximum likelihood to estimate $\gpd$ and $\sged$ parameters from monthly returns
+\i estimate predictive auto-regressions of CFNAI using $\cat$ as a predictor plus other control variables
+\ei
+
+\i Results:
+\bi
+\i $\cat$ is negatively related to the future CFNAI for 1- to 6-month ahead forecast horizons 
+\i this predictability comes from banks
+\i results are robust to alternative measures of economic performance
+\i regional $\cat$ also has predictive power for GDP growth in EU and Asia
+\ei
+\ei
+
+\section*{References}
+
+\bibliography{cifrEmpirics}
+
+
+\end{document}
+
+\subsection{\cite{}}
+\bi
+\i Data:   
+\i Period:  2000-2007 
+\i Econometric methods:  
+\bi
+\i 
+\i 
+\ei
+
+\i Results:
+\bi
+\i 
+\i 
+\ei
+\ei
+
+
+\subsection{$SRISK$}
+
+
+\ei
+
+
+
+
+\subsection{$CoVaR$}
+
+Estimate $\covarab$. 
+
+Data: d
+
+Period: 1986-2010 
+
+Estimation:
+\bi
+
+\ei 
+
+Results:
+\bi
+\i
+\ei
+
+
+\cite{Girardi2013}
+
+Estimation:
+\bi
+
+\ei 
+
+Results:
+\bi
+
+\ei 
+
+
+
+
+\cite{Huang2009}
+
+\cite{Allen2012}
+
+\cite{adrian2011} 
+Purpose: propose a countercyclical, forward looking systemic risk measure 
+
+Data: daily equity returns of large US financial firms; quarterly balance sheet data; state variables: VIX, liquidity spread; change in T-bill rate; change in slope of yield curve; change in credit spread; controls - market equity return; return on real estate sector
+
+Period: 1986-2010 
+
+Definitions:
+$CoVaR$ 
+
+Increased risk to system $m$ when firm $i$ is at its $VaR$ level (in distress) is 
+$$\Delta CoVar_t=CoVaR_{i,t}^{q,q}-CoVaR_{i,t}^{q,0.5}$$
+
+Estimation:
+\bi
+\i use quantile regressions of asset returns to estimate $CoVaR$
+\i add lagged state variables for conditional results
+\ei 
+
+
+
+ is contribution of institution $i$ to system ES
+$$MES_{it}(C)=E_{t-1}(r_{it}|r_{mt}<C)$$
+
+Systemic Expected Shortfall is amount capital [$W$] drops below its target level of $k$ times assets [$A$], conditional on a systemic crisis which occurs when aggregate capital is less than $k$ times aggregate assets
+$$\frac{SES_{it}}{W_{it}}=kL_{it}-1-E_{t-1}(r_{it}|\sum_{i=1}^N W_{it}<k \sum_{i=1}^N A_{it})$$
+SES is linearly related to MES:
+$$SES_{it}=(kL_{it}-1+\theta MES_{it}+\Delta_i)W_{it}$$ where $\theta,\Delta$ are constants.
+
+SRISK extends MES by accounting for liabilities and size of financial institution
+$$SRISK_{it}=\max[0,(kL_{it}-1+(1-k)LRMES_{it})W_{it}]$$
+
+SES and SRISK almost identical; choose SRISK.
+
+Relations:
+Assume a bivariate GARCH-DCC model
+
+$$MES_{it}(\alpha)=\beta_{it}ES_{mt}(\alpha)$$ where $\beta_{it}=\rho_{it}\sigma_{it}/\sigma_{mt}.$
+
+$$SRISK_{it}= \max[0,(kL_{it}-1+(1-k)LRMES_{it})W_{it}]$$
+\cite{acharya2012aer} propose $LRMES_{it}\simeq 1-\exp(18\times MES_{it})$ [why 18? convert daily threshold of 2\% to 6 month fall of 40\%] so 
+$$SRISK_{it}\simeq \max[0,(kL_{it}-1+(1-k)\exp(18\times \beta_{it} \times ES_{mt}(\alpha))W_{it}]$$
+
+$$\Delta CoVaR_{it}(\alpha)=\gamma_{it}[VaR_{it}(\alpha)-VaR_{it}(0.5)]$$ where $\gamma_{it}=\rho_{it}\sigma_{mt}/\sigma_{it}.$
+
+\subsection{SRISK}
+
+\subsection{CoVaR}
+\subsection{\cite{adrian2011}}
+
+Purpose: propose a countercyclical, forward looking systemic risk measure 
+
+Data: daily equity returns of large US financial firms; quarterly balance sheet data; state variables: VIX, liquidity spread; change in T-bill rate; change in slope of yield curve; change in credit spread; controls - market equity return; return on real estate sector
+
+Period: 1986-2010 
+
+Definitions:
+$CoVaR$ 
+$$\text{Pr}(R_{m,t}<-CoVaR_{i,t}^{q,p}|R_{i,t}=-VaR_{i,t}^p)=q$$
+Increased risk to system $m$ when firm $i$ is at its $VaR$ level (in distress) is 
+$$\Delta CoVar_t=CoVaR_{i,t}^{q,q}-CoVaR_{i,t}^{q,0.5}$$
+
+Estimation:
+\bi
+\i use quantile regressions of asset returns to estimate $CoVaR$
+\i add lagged state variables for conditional results
+\ei 
+
+
+
+
+\subsubsection{CoVaR[AB]}
+
+AB 
+
+\subsubsection{CoVaR}
+
+Explain why this is better 
+ 
+\subsection{CATFIN}
+
+
+\subsection{}
+
+
+
+
+\subsection{
+
+
+
+\subsection{\citet{acharya2012aer}}
+
+\cite{acharya2012aer}
+
+\subsection{\citep{acharya2012wp}}
+
+\cite{acharya2012wp}
+
+
+
+
+\subsection{\cite{Engle31032014}}
+
+Purpose: measure systemic risk for large financial institutions in Europe: banks, insurance companies, financial services firms and real estate firms.
+
+Data: individual equity returns; index returns for world, Europe and country; financial leverage
+
+Period: 1990-2012
+
+Definitions:
+
+Long run marginal expected shortfall [expected loss conditional on extreme event]:
+$$LRMES_{i,t:t+T}=-E_t[R_{i,t:t+T} | R_{M,t:t+T} \leq -40\%]$$
+where $R$ is equity return; $40\%$ is arbitrary definition of crisis and equal to worst 6-month market fall over last decade.
+
+Capital shortfall
+$$CS_{i,t:t+T}=\{\theta(L_{i,t}-1)-(1-\theta )E_t(1-LRMES_{i,t:t+T})\}W_{i,t}$$
+where $L$ is financial leverage; $\theta$ is prudential ratio of equity to assets; $W$ is market value of equity.
+
+Systemic risk [positive capital shortfall]
+$$SRISK_{i,t:t+T}=\max(0,CS_{i,t:t+T})$$
+
+Industry level [value weighted sum]:
+$$LRMES_{F,t:t+T}=\sum_{i=1}^{N}w_{i,t}LRMES_{i,t:t+T}$$
+
+Econometric methods: 
+\bi
+\i estimate multi-factor, time varying model of returns using Dynamical Conditional Betas,
+\cite{Engle2014}
+\i model volatility of errors using univariate asymmetric GARCH model
+\i use skewed $t$ distribution for marginals of the innovations and a \textit{t} copula for the dependence structure between the innovations
+\i estimation proceeds recursively from an international model [World and European indexes]; then country models [add in respective country index and use the parameters from the international model] then firm model [include firm returns and use parameters from country model]  
+\i directly estimate $LRMES$
+\bi
+\i simulate forward 125 days returns from model estimates
+\i use $S=50,000$ draws to compute
+$$LRMES_{i,t:t+T}^{(W)}=-\frac{\sum_{s=1}^{S}R_{i,t:t+T}^{(s)} \times I(R_{W,t:t+T}^{(s)}\leq -40\%)}{\sum_{s=1}^{S}I(R_{W,t:t+T}^{(s)}\leq -40\%)}$$
+where $I(x)=1$ if true and 0 otherwise.
+\ei 
+\ei 
+
+Suggestions:  
+
+\subsection{\cite{Corvasce2013}}
+
+\subsection{\cite{Benoit2013}}
+
+Purpose: show how several popular systemic risk measures are transformations of market risk measures and derive conditions under which these measures provide similar rankings of systemically important financial institutions
+
+Data: daily returns for large US financial firms; quarterly book values for debt
+
+Period: 2000-2010
+
+Definitions:
+
+Marginal Expected Shortfall is contribution of institution $i$ to system ES
+$$MES_{it}(C)=E_{t-1}(r_{it}|r_{mt}<C)$$
+
+Systemic Expected Shortfall is amount capital [$W$] drops below its target level of $k$ times assets [$A$], conditional on a systemic crisis which occurs when aggregate capital is less than $k$ times aggregate assets
+$$\frac{SES_{it}}{W_{it}}=kL_{it}-1-E_{t-1}(r_{it}|\sum_{i=1}^N W_{it}<k \sum_{i=1}^N A_{it})$$
+SES is linearly related to MES:
+$$SES_{it}=(kL_{it}-1+\theta MES_{it}+\Delta_i)W_{it}$$ where $\theta,\Delta$ are constants.
+
+SRISK extends MES by accounting for liabilities and size of financial institution
+$$SRISK_{it}=\max[0,(kL_{it}-1+(1-k)LRMES_{it})W_{it}]$$
+
+SES and SRISK almost identical; choose SRISK.
+
+Relations:
+Assume a bivariate GARCH-DCC model
+
+$$MES_{it}(\alpha)=\beta_{it}ES_{mt}(\alpha)$$ where $\beta_{it}=\rho_{it}\sigma_{it}/\sigma_{mt}.$
+
+$$SRISK_{it}= \max[0,(kL_{it}-1+(1-k)LRMES_{it})W_{it}]$$
+\cite{acharya2012aer} propose $LRMES_{it}\simeq 1-\exp(18\times MES_{it})$ [why 18? convert daily threshold of 2\% to 6 month fall of 40\%] so 
+$$SRISK_{it}\simeq \max[0,(kL_{it}-1+(1-k)\exp(18\times \beta_{it} \times ES_{mt}(\alpha))W_{it}]$$
+
+$$\Delta CoVaR_{it}(\alpha)=\gamma_{it}[VaR_{it}(\alpha)-VaR_{it}(0.5)]$$ where $\gamma_{it}=\rho_{it}\sigma_{mt}/\sigma_{it}.$
+
+
+\subsection{\cite{Girardi2013}}
+
+
+\subsection{more}
+
+indicators of distress: equity return losses; CDS rates
+
+\section*{References}
+
+\bibliography{cifrEmpirics}
+
+
+\end{document}
+
+\cite{Huang2009}
+
+\cite{Allen2012}
+
+\subsection{Relations}
+
+\cite{Benoit2013} show how several popular systemic risk measures are transformations of market risk measures and derive conditions under which these measures provide similar rankings of systemically important financial institutions.
+
+Assume a bivariate GARCH-DCC model:
+$$\mes_{jt}=\beta_{jt}\es_{st}$$ where $\beta_{jt}=\rho_{jt}\sigma_{jt}/\sigma_{st}.$
+\cite{acharya2012aer} propose $LRMES_{jt}\simeq 1-\exp(18\times \mes_{jt})$ [why 18? convert daily threshold of 2\% to 6 month fall of 40\%] so
+
+$$\sr_{jt}\simeq \min[0,(E_{jt}\exp(18\times \beta_{jt} \times \es_{st})-k(E_{jT}+D_{jT})]$$
+
+$$\Delta \covar_{it}(\alpha)=\gamma_{it}[\var_{it}(\alpha)-\var_{it}(0.5)]$$ where $\gamma_{it}=\rho_{it}\sigma_{mt}/\sigma_{it}.$

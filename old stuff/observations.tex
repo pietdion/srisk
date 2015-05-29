@@ -1,0 +1,137 @@
+\documentclass[authoryear]{elsarticle}
+\usepackage{latexsym}
+%\usepackage{rotate}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{comment}
+\bibliographystyle{chicago}
+
+
+
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\I}{\mathrm{I}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\vecm}{\mathrm{vec}}
+\newcommand{\kp}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\obdots}{\ddots}    % change this later
+\newcommand{\Ex}{{\cal E}}
+\newcommand{\rat}{{\frac{c_{ij}}{c_{i,j-1}}}}
+\newcommand{\rmu}{m}
+\newcommand{\rsig}{\nu}
+\newcommand{\fd}{\mu}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\cor}{\mathrm{cor}}
+\newcommand{\bx}[1]{\ensuremath{\overline{#1}|}}
+\newcommand{\an}[1]{\ensuremath{a_{\bx{#1}}}}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\renewcommand{\i}{\item}
+\newcommand{\sr}{\ensuremath{\mathrm{SRISK}}}
+\newcommand{\cs}{\ensuremath{\mathrm{CS}}}
+\newcommand{\cri}{\ensuremath{\mathrm{Crisis}}}
+\newcommand{\var}{\ensuremath{\mathrm{VaR}}}
+\newcommand{\covar}{\ensuremath{\mathrm{CoVaR}}}
+\newcommand{\med}{\ensuremath{\mathrm{m}}}
+\newcommand{\de}{\mathrm{d}}
+\renewcommand{\v}{\ensuremath{\mathrm{v}_q}}
+\newcommand{\m}{\ensuremath{\mathrm{m}}}
+\newcommand{\tvar}{\ensuremath{\mathrm{TVaR}}}
+
+
+
+\newcommand{\eref}[1]{(\ref{#1})}
+\newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\sref}[1]{\S\ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
+\newcommand{\aref}[1]{Appendix \ref{#1}}
+
+
+
+
+\newcommand{\cq}{\ , \qquad}
+\renewcommand{\P}{\mathrm{P}}
+\newcommand{\Q}{\mathrm{Q}}
+
+\newcommand{\Vx}{{\cal V}}
+\newcommand{\be}[1]{\begin{equation}\label{#1}}
+\newcommand{\ee}{\end{equation}}
+
+
+
+
+\begin{document}
+
+
+\section{Weihao's observations}
+
+\bi
+
+\i How to standardise $\cov(p_{it},\phi)$ -- still thinking but inclined to standardise by $\sigma_\phi$ instead of $\sigma_\phi^2$.
+
+pdj -- I agree.  Then one is inclined  to write
+$$
+p_{it} \approx \mu_{it} + \beta_{it}\frac{\phi-1}{\sigma_\phi}\ ,
+$$
+and hence $\beta_{it}$ is the response to a one--unit increase in the standardised stress factor $(\phi-1)/\sigma_\phi$.  Hence to my mind it argues the stress factor $(\phi-1)/\sigma_\phi$ is core and needs concrete characterisation.
+
+
+
+\i Capital shortfall at time $i+h$ is the difference between debt and admissible assets
+$$
+d_{it}-(1-k)(w_{i,t+h}+d_{it})  \cq w_{i,t+h}=w_{it} \e^{\nu_{it}}
+$$
+where $k$ is the non-admissible factor and $\nu_{it}$ is the return on equity. Capital shortfall at time $i+h$ can be rewritten as
+$$
+d_{it} - (1-k_{i,t+h})(w_{it}+d_{it})  \cq k_{i,t+h} \equiv 1-(1-k)\frac{w_{it}\e^{\nu_{it}}+d_{it}}{w_{it}+d_{it}}
+$$
+where assets are constant, similar to debt. However the non-admissible or impairment factor $k_{i,t+h}$ varies inversely with $\nu_{it}$. One can either forecast capital shortfall by modeling $\nu_{it}$ or $k_{i,t+h}$, and this paper adopts the former due to available data on equity returns.
+
+pdj -- Another way to look at this is to write
+$$
+\frac{1-k_{i,t+h}}{1-k} = \left(1-\frac{d_{it}}{a_{it}}\right)\e^{\nu_{it}}+\frac{d_{it}}{a_{it}}
+$$
+Can this be exploited? -- note debts to assets is the odds of debt to equity
+
+
+\i Artzner asserts that any coherent risk measure is the supremum of the expected capital shortfall in a collection of generalised scenarios or probability measures $\mathcal{P}$ on states of the world, i.e.
+$$
+\sup \left\{ \E_\mathbb{P}(p_{it}) | \mathbb{P} \in \mathcal{P} \right\}
+$$
+pdj-- this seems a useful background result allowing us to argue the generality of our approach.  Not sure how to best write up/connect to our presentation.
+
+
+\i $\tilde{\E}(p_{it}) = \E(p_{it}) + \cov\{\E(p_{it}|\phi),\phi\}$
+
+pdj-- The implication here is that one can take each given scenario (ie possible outcome of $\phi$) and just consider how expected put prices for each scenario covary with scenario:
+$$
+\beta_{it} = \cov\{p_{it}(\phi^*),\phi^*\}\cq \phi^* \equiv \frac{\phi-1}{\sigma_\phi}\cq p_{it}(\phi^*)\equiv\E(p_{it}|\phi^*)\approx \mu_{it}+\beta_{it}\phi^*
+$$
+This seems useful to me.
+
+\i Write the put payout as
+$$
+p_{it}=k\left|1-\e^{\nu_{it}^*}\right|^+ = k \int_0^\infty (1-\e^{\nu_{it}^*} > s) \de s
+=  k \int_0^\infty (\nu_{it}^* < \ln(1-s)) \de s
+$$
+$$
+= k \int_{-\infty}^0 (\nu_{it}^* < s) \e^s \de s
+$$
+and hence the put covariance is
+$$
+\cov(p_{it},\phi) = \cov\left\{ k \int_{-\infty}^0 (\nu_{it}^* < s) \e^s \de s , \phi \right\}
+= k \int_{-\infty}^0  \cov\left\{  (\nu_{it}^* < s) , \phi \right\} \e^s \de s \;.
+$$
+The covariance in the final integral is between a capital shortfall scenario $(\nu_{it}^* < s)$ and the stress factor. 
+
+pdj -- can you use the expected stress factor trick here?  Still thinking about the implications of above. 
+\ei
+\end{document}

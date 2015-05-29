@@ -1,0 +1,31 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Harvey}{Harvey}{1989}]{Harvey:89}
+Harvey, A.~C. (1989).
+\newblock {\em Forecasting, Structural Time Series Models and the {K}alman
+  Filter}.
+\newblock Cambridge University Press.
+
+\bibitem[\protect\citeauthoryear{Joe}{Joe}{1997}]{joe1997mma}
+Joe, H. (1997).
+\newblock {\em {Multivariate Models and Dependence Concepts}}.
+\newblock Chapman \& Hall/CRC.
+
+\bibitem[\protect\citeauthoryear{Lawley and Maxwell}{Lawley and
+  Maxwell}{1971}]{dnlawley1971fas}
+Lawley, D.~N. and A.~Maxwell (1971).
+\newblock {\em {Factor analysis as a statistical method}}.
+\newblock Butterworths.
+
+\bibitem[\protect\citeauthoryear{McNeil, Frey, Embrechts, et~al.}{McNeil
+  et~al.}{2005}]{mcneil2005qrm}
+McNeil, A., R.~Frey, P.~Embrechts, et~al. (2005).
+\newblock {\em {Quantitative Risk Management: Concepts, Techniques and Tools}}.
+\newblock Princeton University Press.
+
+\bibitem[\protect\citeauthoryear{Nelsen}{Nelsen}{2006}]{nelsen2006ic}
+Nelsen, R. (2006).
+\newblock {\em {An Introduction to Copulas}}.
+\newblock Springer.
+
+\end{thebibliography}
