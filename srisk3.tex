@@ -279,15 +279,15 @@ The right hand side of \eref{formula} splits the stressed expectation $\Es(p_{it
  \mu_{it} \equiv \E(p_{it})=q_{it}\E(p_{it}|\nu_{it}\le \ell_{it}) \ ,
 \ee
 $$
-s_{it} \equiv \cov\{\E(p_{it}|\phi),\phi\}\ , 
+s_{it} \equiv \cov\{\E(p_{it}|\phi),\phi\}\cq q_{it} = \P(\nu_{it}\le \ell_it)\ , 
 $$
 called  the background stress  and systemic stress, respectively, in firm $i$ at time $t$.  Since both $\Es(p_{it})$ and $\E(p_{it})$ lie between 0 and 1 it follows both $\mu_{it}$ and $s_{it}$ lie between 0 and 1 and  are loosely interpreted as probabilities.  Further note 
 $$
-\E(p_{it}|\nu_{it}\le \ell_{it}) \approx \ell_{it}-\E(\nu_{it}|\nu_{it}\le \ell_{it})\ .
+q_{it}\E(p_{it}|\nu_{it}\le \ell_{it}) \approx q_{it}\E(\ell_{it}-\nu_{it}|\nu_{it}\le \ell_{it}) = \ .
 $$
 and hence background risk decomposes into
 $$
-\mu_{it} \approx q_{it}\ell_{it} - q_{it}\E(\nu_{it}|\nu_{it}\le \ell_{it})
+\mu_{it} \approx q_{it}\ell_{it} - \E(|\nu_{it}-\ell_{it}|^+)
 $$
 (Weihao, do you think it is worthwhile to decompose the $s_{it}$ analogously in terms of a probability time a tail event?) 
 
