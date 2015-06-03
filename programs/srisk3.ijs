@@ -2,8 +2,8 @@ load '~user/piet.ijs'
 load 'stats/r/rserve csv dates tables/tara'
 
 figdir=:'/users/pietdejong/documents/research/srisk/figures/'
-
 datadir=:'~/documents/research/srisk/data/'
+
 time=: 6!:2
 
 dplot=:'dot;pensize 2'&plot
@@ -50,7 +50,7 @@ NB.  run  R
 NB.  Assume .First=function(){library(Rserve)}
 NB.  Rserve(args="--no-save")
    Ropen''
-   Rlib 'rmgarch'   NB.  'quantmod' 
+   Rlib L:0 'rmgarch';'xtable'   NB.  'quantmod' 
    sr''
 )
 
@@ -104,8 +104,6 @@ NB. time '0 dcc cba,.asx'
 NB. time '1 dcc cba,.asx'
 
 NB. pcs 'cba'
-
-NB. xxx=:1 ct 'cba'
 
 
 
@@ -317,7 +315,26 @@ figsysstress=: 3 : 0
    pd 'pdf 350 150 ',figdir,'sysstress.pdf'
 )
   
-figsysstress''
+NB. figsysstress''
+
+table=: 3 : 0
+   months=.'first secnd'=.72 142                   NB. jan09 nov14
+   mus_it=:pi_it*mu_it %"1 mub_t                   NB. mxT
+   ss_it=:pi_it*s_it %"1 sb_t                      NB. mxT
+   xxx=:mus_it,ss_it,q_it,pi_it,:l_it              NB. 5xmxT
+   row=:mub_t,sb_t,qb_t,(%&1e11 +/d_it),:Ex_d l_it  NB. mxT
+   xxx=:xxx ,"2 1 row                              NB. 5x(m+1)xT
+   row=:mu_t,s_t,q_t,(%&1e11 +/d_it),:l_t          NB. mxT
+   xxx=:xxx ,"2 1 row                              NB. 5x(m+2)xT
+   xxx=:months{|:xxx                               NB. 2x(m+2)x5
+  'mat' Rset 100*,./xxx
+   R 'rnames=c("cba","anz","nab","wbc","mqg","boq","ben","aba","ave","div")' NB. "tot","ave","div")'
+   R 'cnames=c("mu","s","q","pi","ell","mu","s","q","pi","ell")'
+   R 'dimnames(mat)=list(rnames,cnames)'
+   R 'print(xtable(mat))'
+)
+
+ table''
 
 stop
 
