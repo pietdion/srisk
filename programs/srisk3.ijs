@@ -17,11 +17,22 @@ stats=:mean,sd,:range
 cte=:(%@] * <:)& 0.05
 min12=:(12&*)@(^&11)@(1&-)
 phi=:min12
-Ex=:+/@:(* %"1 +/@:])                 NB.   (mxT) Ex mxT where weighting is on right
+Ex=:+/@:(* %"1 +/@:])                 NB.   (mxT) Ex mxT where y is weighting
 put=:*>&0                            
 
 lo=:_15"0
 ln=: (lo`^.@.(>&0))"0                     	NB. log or zero
+
+Init=:0 : 0
+   rddat''     NB. Read data etc, assume all estimation done
+NB.  run  R
+NB.  Assume .First=function(){library(Rserve)}
+NB.  Rserve(args="--no-save")
+   Ropen''
+   Rlib L:0 'rmgarch';'xtable'   NB.  xtable required for latex output of Tables
+               NB. Estimation required?  then uncomment line in rddat
+   sr''        NB. Create all the variables
+)
 
 rddat=: 3 : 0
   dat=:readcsv datadir,'cifrdatdaily.csv'
@@ -44,15 +55,7 @@ NB.  'ldwit pn'=:|:(1&ct)"1 banks      NB. (mx3xT);mx2xNxT  -- m=#y
   {.dat
 )
 
-Init=: 0 : 0
-   rddat''
-NB.  run  R
-NB.  Assume .First=function(){library(Rserve)}
-NB.  Rserve(args="--no-save")
-   Ropen''
-   Rlib L:0 'rmgarch';'xtable'   NB.  'quantmod' 
-   sr''
-)
+
 
 dcccore=: 4 : 0        NB. library(rmgarch)
   'S h'=.6000 22['y' Rset r=.y   
@@ -318,23 +321,23 @@ figsysstress=: 3 : 0
 NB. figsysstress''
 
 table=: 3 : 0
-   months=.'first secnd'=.72 142                   NB. jan09 nov14
-   mus_it=:pi_it*mu_it %"1 mub_t                   NB. mxT
-   ss_it=:pi_it*s_it %"1 sb_t                      NB. mxT
-   xxx=:mus_it,ss_it,q_it,pi_it,:l_it              NB. 5xmxT
-   row=:mub_t,sb_t,qb_t,(%&1e11 +/d_it),:Ex_d l_it  NB. mxT
-   xxx=:xxx ,"2 1 row                              NB. 5x(m+1)xT
-   row=:mu_t,s_t,q_t,(%&1e11 +/d_it),:l_t          NB. mxT
-   xxx=:xxx ,"2 1 row                              NB. 5x(m+2)xT
-   xxx=:months{|:xxx                               NB. 2x(m+2)x5
-  'mat' Rset 100*,./xxx
-   R 'rnames=c("cba","anz","nab","wbc","mqg","boq","ben","aba","ave","div")' NB. "tot","ave","div")'
+   months=.'first secnd'=.72 142                      NB. jan09 nov14
+   mus_it=:pi_it*mu_it %"1 mub_t                      NB. mxT
+   ss_it=:pi_it*s_it %"1 sb_t                         NB. mxT
+   mat=:l_it,pi_it,mus_it,ss_it,:q_it                 NB. 5xmxT
+   row=:(Ex_d l_it),(%&1e11 +/d_it),mub_t,sb_t,:qb_t  NB. mxT
+   mat=:mat ,"2 1 row                                 NB. 5x(m+1)xT
+   row=:l_t,(%&1e11 +/d_it),mu_t,s_t,:q_t            NB. mxT
+   mat=:mat ,"2 1 row                                 NB. 5x(m+2)xT
+   mat=:months{|:mat                                   NB. 2x(m+2)x5
+  'mat' Rset 100*,./mat
+   R 'rnames=c("cba","anz","nab","wbc","mqg","boq","ben","aba","Exd","Sum")' NB. "tot","ave","div")'
    R 'cnames=c("mu","s","q","pi","ell","mu","s","q","pi","ell")'
    R 'dimnames(mat)=list(rnames,cnames)'
    R 'print(xtable(mat))'
 )
 
- table''
+table''
 
 stop
 
