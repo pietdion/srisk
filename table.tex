@@ -73,34 +73,31 @@
 \begin{document}
 
 \section*{Real time stress calculations on two dates}
- \tref{twodates} contains real time stress calculations for the first trading day for  January 2009 and November 2014.  As before there is no look ahead bias -- all calculations on each of the two dates only reflect information available at the start of the applicable month.  The initial eight rows in the table lists the eight banks used in this study.   The first  and second columns in the two segments of the table body contain the background and systemic stress
+ \tref{twodates} contains real time stress calculations on the first trading day of  January 2009 and November 2014.  As before there is no look ahead bias -- all calculations on each of the two dates only reflect information available at the start of the applicable month.  The initial eight rows in the table lists the eight banks used in this study.   The first  and second columns in the two segments of the table body contain the background and systemic stress
 $$
 \mu^*_{it} \equiv \frac{\pi_{it}\mu_{it}}{\Ex_d(\mu_{it})}\cq s^*_{it} \equiv \frac{\pi_{it}s_{it}}{\Ex_d(\mu_{it})}\ , 
 $$
-for the eight banks as well as the probability of a Basel default in one month $q_{it}$ and the proportion of total debt, $\pi_{it}$ in each bank.
+for the eight banks as well as the probability of a Basel default in one month $q_{it}$ and the proportion $\pi_{it}$ of total debt.
 
-January 2009 marked a time of great stress for all eight banks.    Six of the eight banks were in Basel default with positive capital shortfalls as indicated in by the $\ell_{it}$ column:   the two banks not in Basel default were wbc and aba.   The background stress column indicates most of the background stress arises from nab -- almost 40\% of the total.   The next most background stressed bank is cba with wbc also a substantial contributor.   The mqg bank contributes almost double to background stress compared to the proportion of total debt  it carries.  The other three small banks contribute relatively little to background stress with boq  almost 3 times expected on the basis of its debt.   Systemic stress is highest for the cba, higher than expected on the basis of its debt load and hence cba was most susceptible to stress from additional general market equity devaluation.    All other banks appear have systemic stress comparable to their size in terms of debt load with only nab being less systemically important.    This should be compared to its high background stress.
+January 2009 marked a time of great stress for all eight banks.    Six of the eight banks were in Basel default with positive capital shortfalls as indicated in by the $\ell_{it}$ column:   the two banks not in Basel default were wbc and aba.   The background stress column indicates most of the background stress arises from nab -- almost 40\% of the total.   The next most background stressed bank is cba with wbc also a substantial contributor.   The mqg bank contributes almost double to background stress compared to the proportion of total debt  it carries.  The other three small banks contribute relatively little to background stress with boq  almost 3 times expected on the basis of its debt.   Systemic stress is highest for the cba, higher than expected on the basis of its debt load and hence cba was most susceptible to stress from additional general market equity devaluation.    All other banks appear have systemic stress comparable to their size in terms of debt load with only nab being less systemically important.    This should be compared to nab's high background stress.
 
 Continuing with January 2009, the final two rows indicate the total amount of stress in the system and it's diversifiability.   In particular 
-the row labelled ``ave" immediately below the eight banks displays
+the second last  row labelled $\Ex_e$  displays
 $$
-\overline{\mu}_t\equiv \Ex_d(\mu_{it})\cq \overline{s}_t\equiv\Ex_d(s_{it})\cq\Ex_d(q_{it})\cq \frac{d_t}{10^9}\cq \Ex_d(\ell_{it})\ .
+\overline{\mu}_t\equiv \Ex_d(\mu_{it})\cq \overline{s}_t\equiv\Ex_d(s_{it})\cq\Ex_d(q_{it})\cq \frac{d_t}{10^9}\cq \Ex_d(\ell_{it})\ ,
 $$
-while the final row labelled ``div" displays the aggregate stress quantities $\mu_t$, $s_t$, and so on, treating all eight banks as one entity.
+while the final row labelled $\Sigma$ displays the aggregate stress quantities $\mu_t$, $s_t$, and so on, treating all eight banks as one entity.
 On an aggregate basis background stress is about twice systemic stress.   Thus there is more danger of increasing capital shortfall due to market volatility  as opposed to further stress from further substantial general market devaluation.  The final row indicates stresses are not diversifiable:    The marginally  smaller  ``diversified"  background stress is offset by an increase in systemic stress.    Also the diversified probability of Basel default is higher than the debt weighted average.   
 
- Moving to November 2014, the stress picture has completely changed with virtually no stress in any bank and certainly none on the basis of diversification.    Most of this minimal background stress is carried by nab with lesser contributions by ben and aba.    All the stress in the minor bank aba is background stress as only nab and nab have substantial systemic stress contributions.   Again, however, it must be stressed that there is minimal systemic stress in the system.    Only aba has substantial Basel default probability, but this bank is a very minor player in the Australian banking scene.   Notice total debt in the banking sector has jumped around 35\% between January 2009 and November 2014.
-
-
-
+ The stress picture  changes dramatically when moving to November 2014 -- there is virtually no stress in any bank and any stress is diversifiable.    Most of the  background stress is carried by nab with lesser contributions by ben and aba.    All the stress in the minor bank aba is background stress as only nab and nab have substantial systemic stress contributions.   Again, however, it must be emphasised that there is minimal systemic stress in the system.    Only aba has substantial Basel default probability, but this bank is a very minor player in the Australian banking scene.   Notice total debt in the banking sector has jumped around 35\% between January 2009 and November 2014.
 
 \begin{table}[ht]
-\caption{One month ahead stress calculations$^\dag$ }\label{twodates}
+\caption{One month ahead stress calculations for Australian banks$^\dag$}\label{twodates}
 \centering
 \vspace{4mm}
-\begin{tabular}{|l|rrrrr|rrrrr|}
+\begin{tabular}{l|rrrrr|rrrrr}
 \hline
-&\multicolumn{5}{c|}{January 2009}&\multicolumn{5}{c|}{November 2014}\\
+&\multicolumn{5}{c|}{January 2009}&\multicolumn{5}{c}{November 2014}\\
   \hline
 bank & \multicolumn{2}{c}{stress} & def & debt & B-log& \multicolumn{2}{c}{stress} & def & debt & B-log \\
   \cline{2-3}\cline{7-8}
@@ -119,13 +116,11 @@ boq & 3.55 & 0.99 & 99.95 & 1.32 & 63.30 & 0.80 & 1.34 & 0.33 & 1.33 & -17.05 \\
 ben & 1.72 & 1.71 & 90.53 & 1.81 & 18.91 & 25.43 & 30.71 & 8.47 & 1.84 & -7.63 \\ 
 aba & 0.00 & 0.00 & 9.97 & 0.10 & -8.12 & 23.07 & 0.71 & 89.63 & 0.07 & 9.22 \\ 
   \hline
-ave & 17.17 & 8.63 & 82.72 &  & 18.78 & 0.03 & 0.12 & 0.54 &  & -41.91 \\ 
-div & 15.28 & 10.18 & 96.72 & $^*$2.42 & 17.81 & 0.00 & 0.00 & 0.00 & $^*$3.27 & -44.22 \\ 
-   \hline
+$\Ex_d$ & 17.17 & 8.63 & 82.72 &  & 18.78 & 0.03 & 0.12 & 0.54 &  & -41.91 \\ 
+$\Sigma$ & 15.28 & 10.18 & 96.72 & $^\dag$2.42 & 17.81 & 0.00 & 0.00 & 0.00 & $^\dag$3.27 & -44.22 \\ 
+\hline
 \end{tabular}
 \end{table}
-\small{   $^\dag$All numbers multiplied by 100 except total debt (in \$bln).}
-
-
+\small{$^\dag$All numbers multiplied by 100 except total debt (in \$bln).}
 
 \end{document}
