@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.11.18)  5 JUN 2015 07:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.11.18)  5 JUN 2015 09:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -269,7 +269,7 @@ Package pdftex.def Info: figures/simulation.pdf used on input line 244.
  [8] [9 <./figures/simulation.pdf>] [10] [11]
 [12] Excluding 'comment' comment. [13] [14] [15] [16] [17]
 Excluding 'comment' comment.
-Overfull \hbox (7.87979pt too wide) in paragraph at lines 466--466
+Overfull \hbox (7.87979pt too wide) in paragraph at lines 461--461
 []\OT1/cmr/bx/n/17.28 One month ahead fore-cast stress in in-di-vid-ual banks 
  []
 
@@ -277,23 +277,23 @@ Overfull \hbox (7.87979pt too wide) in paragraph at lines 466--466
 File: figures/default.pdf Graphic file (type pdf)
 
 <use figures/default.pdf>
-Package pdftex.def Info: figures/default.pdf used on input line 480.
+Package pdftex.def Info: figures/default.pdf used on input line 474.
 (pdftex.def)             Requested size: 351.31163pt x 250.93687pt.
  [19 <./figures/default.pdf>] [20]
 <figures/muqs.pdf, id=95, 351.3125pt x 150.5625pt>
 File: figures/muqs.pdf Graphic file (type pdf)
  <use figures/muqs.pdf>
-Package pdftex.def Info: figures/muqs.pdf used on input line 535.
+Package pdftex.def Info: figures/muqs.pdf used on input line 529.
 (pdftex.def)             Requested size: 351.31163pt x 150.56212pt.
 
 [21 <./figures/muqs.pdf>] [22] [23] Excluding 'comment' comment.
-Overfull \hbox (8.05281pt too wide) in paragraph at lines 631--631
+Overfull \hbox (8.05281pt too wide) in paragraph at lines 625--625
 []\OT1/cmr/bx/n/14.4 Stress func-tions as weighted lin-ear com-bi-na-tions of t
 ail events 
  []
 
 [24] [25] [26]
-Overfull \hbox (12.8899pt too wide) in paragraph at lines 714--714
+Overfull \hbox (12.8899pt too wide) in paragraph at lines 708--708
 []\OT1/cmr/bx/n/17.28 Background and sys-temic stress com-pared to SRISK 
  []
 
@@ -302,7 +302,7 @@ Overfull \hbox (12.8899pt too wide) in paragraph at lines 714--714
 File: figures/sysstress.pdf Graphic file (type pdf)
 
 <use figures/sysstress.pdf>
-Package pdftex.def Info: figures/sysstress.pdf used on input line 752.
+Package pdftex.def Info: figures/sysstress.pdf used on input line 746.
 (pdftex.def)             Requested size: 351.31163pt x 150.56212pt.
  [29 <./figures/sysstress.pdf>]
 Excluding 'comment' comment. [30] [31] (./srisk6.bbl [32]
@@ -343,7 +343,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2908 strings out of 493117
  39168 string characters out of 6135432
- 110043 words of memory out of 5000000
+ 110041 words of memory out of 5000000
  6327 multiletter control sequences out of 15000+600000
  11955 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -365,7 +365,7 @@ ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on srisk6.pdf (35 pages, 4492490 bytes).
+Output written on srisk6.pdf (35 pages, 4492326 bytes).
 PDF statistics:
  203 PDF objects out of 1000 (max. 8388607)
  141 compressed objects within 2 object streams

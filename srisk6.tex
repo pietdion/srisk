@@ -247,10 +247,7 @@ To illustrate the setup in \eref{bs}, \fref{simulation}   displays two snapshot 
 \end{center}
 \end{figure}
 
-
-
-
-\section{Systemic risk -- SRISK}\label{srisk}
+\section{SRISK and systemic risk}\label{srisk}
 
  \cite{brownlees2015} defines  systemic risk (SRISK) for a group of firms  at time $t$ as
 \be{esrisk}
@@ -391,7 +388,7 @@ d_{it}\beta_{it}
 $
 and represents the change in the monetary value of the Basel put  if stress, as captured with $\phi$, is applied.
 
-\section{Estimating background and systemic stress via simulation}\label{estimate}
+\section{Background and systemic stress via simulation}\label{estimate}
 
 The following computes background Stress $\mu_{it}$ and systemic stress $s_{it}$ using simulation.   Suppose $(\phi^\o,p_{it}^\o)$ are pairs of stress and put values generated from a model: for example $\phi^\o$ may be zero unless there is a market drop below the $\alpha$--percentile in which case it is $1/\alpha$.
 Then
@@ -449,9 +446,7 @@ $$
 Similar to the first example, the stressed sample picks up the bottom $\alpha$ of market returns. The bottom $\alpha$ of market returns is further stressed by  progressively overweighing returns as the percentile approaches 0.   Large simulation effort $N$ is required for a reasoNABle approximation since $N/c$ is the effective simulation size and $c$ is small.
 
 
-\section{Simulating future capital shortfall and market return}\label{simulate}
-
-
+\section{Forward capital shortfall and  return simulations}\label{simulate}
 
 The estimation of background stresses and systemic stresses and betas requires projections of future capital shortfalls. As in \cite{brownlees2015}, projections in this paper are constructed  using time series models of forward rates of return $\nu_{it}$ for firm $i$ and $\nu_{mt}$ for the market. The market return is used as the stressor with different choices of the stress function $\phi$ modelling different stress scenarios.
 
@@ -476,9 +471,9 @@ Bottom panels in \fref{default} show systemic stress $s_{it}$ computed by assumi
 
  \begin{figure}[htbp]
 \begin{center}
-\label{default}
 \includegraphics{figures/default.pdf}
-\caption{Forecast one month ahead  Basel default probability (top panels), background stress (middle panels) and systemic stress (bottom panels) for  four major (left panel) and four minor (right panel)  banks from the beginning of 2003 through to end of 2014.  Note different scale on bottom two rows of panels.}
+\caption{Forecast one month ahead  Basel default probability (top panels), background stress (middle panels) and systemic stress (bottom panels) for  four major (left panel) and four minor (right panel)  banks from the beginning of 2003 through to end of 2014.  Note different scale on bottom two rows of panels.}\label{default}
+
 \end{center}
 \end{figure}
 
@@ -531,9 +526,8 @@ The inequality is proved in  \aref{proof}.  The  put $p_t$ pays 0 at time $t+h$ 
 
 \begin{figure}[htbp]
 \begin{center}
-\label{muqs}
 \includegraphics{figures/muqs.pdf}
-\caption{Average  stresses and  total stresses.   Stress measurements are, left to right, $\mu$, $q$ and $s$, respectively.   The top row of panels measure for example (top left panel)  $\overline \mu_t$ and $\mu_t$ over time.    In the bottom row of panels  specific stresses are measured are against each other:  for example $\mu_t$ (vertical axis) versus $\overline\mu_t$ (horizontal axis).  In all cases there is no total stress until there is an appreciable level of average stress.  Systemic stress $\overline s_t$ appears to be the least diversifiable.}
+\caption{Average  stresses and  total stresses.   Stress measurements are, left to right, $\mu$, $q$ and $s$, respectively.   The top row of panels measure for example (top left panel)  $\overline \mu_t$ and $\mu_t$ over time.    In the bottom row of panels  specific stresses are measured are against each other:  for example $\mu_t$ (vertical axis) versus $\overline\mu_t$ (horizontal axis).  In all cases there is no total stress until there is an appreciable level of average stress.  Systemic stress $\overline s_t$ appears to be the least diversifiable.}\label{muqs}
 \end{center}
 \end{figure}
 
@@ -547,7 +541,7 @@ System resilience aims to answer the question of whether the system as a whole c
 
 Firms do not necessarily merge, even in dire financial circumstances.   Hence the mergers spoken of here are hypothetical.   From a regulators perspective, what would happen under a merger of all firms (or perhaps a group of firms) is nevertheless of interest.   A system as as a whole near Basel breach is more threatening that one where a few firms are near Basel breach but the system as a whole is strongly Basel compliant.
 
-System compliance is partially monitored with the system put $\overline p_t=\Exd(p_{it})$ and its stressed expectation $\Es(\overline p_t)$. However both quantities are before diversification and gives no indication of system resilience and as to how much risk can be diversified away. Basing a put on system wide aggregated debt and equity and comparing the same to $p_t$  gives at least some guidance.
+System compliance is partially monitored with the system put $\overline p_t=\Exd(p_{it})$ and its stressed expectation $\Es(\overline p_t)$. However both quantities are before diversification and give no indication of system resilience and as to how much risk can be diversified away. Basing a put on system wide aggregated debt and equity and comparing the same to $p_t$  gives at least some guidance.
 
 \fref{muqs} compares background and systemic stresses before and after diversification. As expected, stresses reduce after diversification. The diversification is most apparent for small levels of stresses where they are close to zero. The diversification disappears when stresses reach a certain level, with points in bottom panels of \fref{muqs} following the 45$^\circ$ line. The extent of resilience or diversification over time can also be measured using the ratios $\mu_t/\overline \mu_t$ and $(\mu_t+s_t/(\overline \mu_t+\overline s_t)\le 1$. As diversification or resilience weakens such as during 2008, the ratio increases to 1.
 
@@ -844,14 +838,8 @@ $$
 $$
 Correlations $\rho_{it}$ recovered from the $Q_{it}$ are used as the correlation between $\eps_{it}$ and $\eps_{mt}$.
 
-\section{Computations}
-
-All model fits in this paper have been performed with the R language \citep{R-Development-Core-Team:2008aa} and in particular the rmgarch package described by \cite{ghalanos2012rmgarch}.  All other calculations were performed using the J language \citep{iverson2003j}.
-
-In the forward simulated forward projections the  innovations are chosen randomly from past innovations.   These past innovations are chosen consistently:  at a particular $t$ either all or none of $\eps_{it}$ are chosen.
-
 \section{Proof of system put is less   than debt weighted average put}\label{proof}
-
+Since
 $$
 1-\e^{-\ell_{it}} = \frac{ \kappa d_{it} - (1-\kappa)w_{it}}{\kappa d_{it}}\cq \Ex_d (1-\e^{-\ell_{it}}) = \frac{\kappa d_t - (1-\kappa) w_t}{\kappa d_t} = 1-\e^{-\ell_t} \ ,
 $$
@@ -901,6 +889,13 @@ DataStream datatype codes are
 \end{center}
 
 Firm equity $w_{it}$ is Number of Shares multiplied by Price. Firm debt $d_{it}$ is Total Assets minus Shareholders Equity. Stock returns are computed from the Total Return Index which includes dividends as paid. 
+
+\section{Computations}
+
+All model fits in this paper are performed with the R language \citep{R-Development-Core-Team:2008aa} and in particular the rmgarch package described by \cite{ghalanos2012rmgarch}.  All other calculations are done in the J language \citep{iverson2003j}.
+
+In the forward simulated forward projections the  innovations are chosen randomly from past innovations.   These past innovations are chosen consistently:  at a particular $t$ either all or none of $\eps_{it}$ are chosen.
+
 
 
 
