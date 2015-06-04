@@ -490,16 +490,16 @@ There are two ways of aggregating stress in the financial market as a whole.  Th
 \be{nsrisk}
 \overline p_t \equiv \Exd(p_{it}) \cq \Es(\overline p_t)=\Exd\{\Es(p_{it})\} = \Exd(\mu_{it}+s_{it}) \equiv \overline\mu_{t}+\overline s_t \ ,
 \ee
-where $\overline\mu_{t}=\Exd(\mu_{it})$ and $\overline s_{t}=\Exd(s_{it})$ are overall background and systemic stresses, respectively. The put $\overline p_t$ in \eref{nsrisk} pays out zero if all firms are Basel compliant with payouts increasing with the number and size of Basel breaches. The relation in \eref{nsrisk} follow since  $\Es$ and $\Exd$ are linear.
+where $\overline\mu_{t}\equiv\Exd(\mu_{it})$ and $\overline s_{t}\equiv\Exd(s_{it})$ are overall background and systemic stresses, respectively. The put $\overline p_t$ in \eref{nsrisk} pays out zero if all firms are Basel compliant with payouts increasing with the number and size of Basel breaches. The relation in \eref{nsrisk} follow since  $\Es$ and $\Exd$ are linear.
 
 The monetary value of overall background and systemic stresses at time $t$ are, respectively,
 $$
 \kappa d_t\overline\mu_t = \kappa d_t\Exd(\mu_{it}) = \kappa\sum_i d_{it}\mu_{it}\cq \kappa d_t\overline s_t  = \kappa\sum_i d_{it}s_{it}\ .
 $$
-Percentage contributions of firm $i$ to background and systemic stresses are
-$$
-\frac{\pi_{it}\mu_{it}}{\overline \mu_t} \equiv \pi_{it}\frac{\mu_{it}}{\Exd(\mu_{it})}\cq \frac{\pi_{it}s_{it}}{\overline s_t} \equiv \pi_{it} \frac{s_{it}}{\Exd(s_{it})}\ .
-$$
+Proportionate contributions of firm $i$ to background and systemic stresses are
+\be{standardised}
+\mu_{it}^*\equiv \frac{\pi_{it}\mu_{it}}{\overline \mu_t} \cq s_{it}^*\equiv\frac{\pi_{it}s_{it}}{\overline s_t}\ .
+\ee
 where $\pi_{it}\equiv d_{it}/d_t$ as before is the proportion of total debt held by firm $i$. Firm $i$ contributes to a larger portion of overall stress if it holds a large amount of debt and its returns are subject to high downside risk, particularly in a market downturn (for $s_{it}$). Contributions add to 1 across firms.  A ratio such as $s_{it}/\overline s_t$, without reflecting firm size, compares the stress in firm $i$ to average stress but does not signal the importance of that firm to the system as a whole.
 
 
@@ -590,10 +590,7 @@ $^\dag$All numbers multiplied by 100 except total debt (in \$bln).
 \normalsize
 
 January 2009 was a time of great stress for all eight banks.     The first  and second columns in the two halves of the table body contain the 
- Basel log--leverage $\ell_{it}$ and debt $\pi_{it}\equiv d_{it}/d_t$ (as a proportion of total debt) for each of the banks.  Six of the eight banks were in Basel default with positive capital shortfalls as indicated by the $\ell_{it}$ column:   the two banks not in Basel default were WBC and ABA.    Background and systemic stress
-$$
-\mu^*_{it} \equiv \frac{\pi_{it}\mu_{it}}{\Ex_d(\mu_{it})}\cq s^*_{it} \equiv \frac{\pi_{it}s_{it}}{\Ex_d(\mu_{it})}\ , 
-$$
+ Basel log--leverage $\ell_{it}$ and debt $\pi_{it}\equiv d_{it}/d_t$ (as a proportion of total debt) for each of the banks.  Six of the eight banks were in Basel default with positive capital shortfalls as indicated by the $\ell_{it}$ column:   the two banks not in Basel default were WBC and ABA.    Percentage background and systemic stress as defined in \eref{standardised} 
 for the banks as well as the probability $q_{it}$ of a Basel default in one month are displayed in the next 3 columns.    The background stress column indicates most of the background stress arises from NAB -- almost 40\% of the total.   The next most background stressed bank is CBA with WBC also a substantial contributor.   The MQG bank contributes almost double to background stress compared to the proportion of total debt  it carries.  The other three small banks contribute relatively little to background stress with BOQ  almost 3 times expected on the basis of its debt.   Systemic stress is highest for the CBA, higher than expected on the basis of its debt load and hence CBA was most susceptible to stress from additional general market equity devaluation.    All other banks appear have systemic stress comparable to their size in terms of debt load with only NAB being less systemically important.    This should be compared to NAB's high background stress.
 
 Continuing with January 2009, the final two rows indicate the total amount of stress in the system and it's diversifiability.    
