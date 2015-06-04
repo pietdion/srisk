@@ -1,0 +1,145 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Acharya, Engle, and Richardson}{Acharya
+  et~al.}{2012}]{acharya2012capital}
+Acharya, V., R.~Engle, and M.~Richardson (2012).
+\newblock Capital shortfall: A new approach to ranking and regulating systemic
+  risks.
+\newblock {\em The American Economic Review\/}~{\em 102\/}(3), 59--64.
+
+\bibitem[\protect\citeauthoryear{Acharya, Pedersen, Philippon, and
+  Richardson}{Acharya et~al.}{2012}]{acharya2012measuring}
+Acharya, V., L.~Pedersen, T.~Philippon, and M.~Richardson (2012).
+\newblock Measuring systemic risk.
+
+\bibitem[\protect\citeauthoryear{Adrian and Brunnermeier}{Adrian and
+  Brunnermeier}{2011}]{adrian2011covar}
+Adrian, T. and M.~K. Brunnermeier (2011).
+\newblock Covar.
+\newblock Technical report, National Bureau of Economic Research.
+
+\bibitem[\protect\citeauthoryear{Benoit, Colletaz, Hurlin, and Perignon}{Benoit
+  et~al.}{2013}]{Benoit2013}
+Benoit, S., G.~Colletaz, C.~Hurlin, and C.~Perignon (2013).
+\newblock A theoretical and empirical comparison of systemic risk measures.
+\newblock HEC Paris Research Paper No. FIN-2014-1030. Available at SSRN:
+  http://ssrn.com/abstract=1973950 or http://dx.doi.org/10.2139/ssrn.1973950.
+
+\bibitem[\protect\citeauthoryear{Bisias, Flood, Lo, and Valavanis}{Bisias
+  et~al.}{2012}]{Bisias2012}
+Bisias, D., M.~D. Flood, A.~W. Lo, and S.~Valavanis (2012).
+\newblock A survey of systemic risk analytics.
+\newblock U.S. Department of Treasury, Office of Financial Research No. 0001.
+  Available at SSRN: http://ssrn.com/abstract=1983602 or
+  http://dx.doi.org/10.2139/ssrn.1983602.
+
+\bibitem[\protect\citeauthoryear{Brownlees and Engle}{Brownlees and
+  Engle}{2010}]{brownlees2010volatility}
+Brownlees, C.~T. and R.~Engle (2010).
+\newblock Volatility, correlation and tails for systemic risk measurement.
+\newblock {\em New York University, mimeo\/}.
+
+\bibitem[\protect\citeauthoryear{Brownlees and Engle}{Brownlees and
+  Engle}{2015}]{brownlees2015}
+Brownlees, C.~T. and R.~F. Engle (2015).
+\newblock {SRISK}: A conditional capital shortfall index for systemic risk
+  measurement.
+\newblock FRB of New York Staff Report No. 348. Available at SSRN:
+  http://ssrn.com/abstract=1611229 or http://dx.doi.org/10.2139/ssrn.1611229.
+
+\bibitem[\protect\citeauthoryear{Choo and De~Jong}{Choo and
+  De~Jong}{2010}]{choo2010determining}
+Choo, W. and P.~De~Jong (2010).
+\newblock Determining and allocating diversification benefits for a portfolio
+  of risks.
+\newblock {\em Astin Bulletin\/}~{\em 40\/}(1), 257--269.
+
+\bibitem[\protect\citeauthoryear{Cummins}{Cummins}{1988}]{cummins1988risk}
+Cummins, J. (1988).
+\newblock {Risk-based premiums for insurance guaranty funds}.
+\newblock {\em Journal of Finance\/}, 823--839.
+
+\bibitem[\protect\citeauthoryear{Doherty and Garven}{Doherty and
+  Garven}{1986}]{doherty1986price}
+Doherty, N. and J.~Garven (1986).
+\newblock {Price regulation in property-liability insurance: A
+  contingent-claims approach}.
+\newblock {\em Journal of Finance\/}~{\em 41\/}(5), 1031--1050.
+
+\bibitem[\protect\citeauthoryear{Engle}{Engle}{2002}]{engle2002dynamic}
+Engle, R. (2002).
+\newblock Dynamic conditional correlation: A simple class of multivariate
+  generalized autoregressive conditional heteroskedasticity models.
+\newblock {\em Journal of Business \& Economic Statistics\/}~{\em 20\/}(3),
+  339--350.
+
+\bibitem[\protect\citeauthoryear{Engle}{Engle}{2014}]{Engle2014dcb}
+Engle, R. (2014).
+\newblock Dynamic conditional beta.
+\newblock Unpublished working paper. New York University. Available at SSRN:
+  http://ssrn.com/abstract=2404020 or http://dx.doi.org/10.2139/ssrn.2404020.
+
+\bibitem[\protect\citeauthoryear{Engle, Jondeau, and Rockinger}{Engle
+  et~al.}{2015}]{Engle2015}
+Engle, R., E.~Jondeau, and M.~Rockinger (2015).
+\newblock Systemic risk in {Europe}.
+\newblock {\em Review of Finance\/}~{\em 19\/}(1), 145--190.
+
+\bibitem[\protect\citeauthoryear{Furman and Zitikis}{Furman and
+  Zitikis}{2008}]{furman2008weighted1}
+Furman, E. and R.~Zitikis (2008).
+\newblock Weighted risk capital allocations.
+\newblock {\em Insurance: Mathematics and Economics\/}~{\em 43\/}(2), 263--269.
+
+\bibitem[\protect\citeauthoryear{Ghalanos}{Ghalanos}{2012}]{ghalanos2012rmgarch}
+Ghalanos, A. (2012).
+\newblock rmgarch: Multivariate garch models.
+\newblock {\em R package version 0.98\/}.
+
+\bibitem[\protect\citeauthoryear{Giglio, Kelly, and Pruitt}{Giglio
+  et~al.}{2015}]{Giglio2015}
+Giglio, S., B.~T. Kelly, and S.~Pruitt (2015).
+\newblock Chicago Booth Research Paper No. 12-49. Available at SSRN:
+  http://ssrn.com/abstract=2158347 or http://dx.doi.org/10.2139/ssrn.2158347.
+
+\bibitem[\protect\citeauthoryear{Girardi and Erg{\"u}n}{Girardi and
+  Erg{\"u}n}{2013}]{Girardi2013}
+Girardi, G. and A.~T. Erg{\"u}n (2013).
+\newblock Systemic risk measurement: Multivariate {GARCH} estimation of
+  {CoVaR}.
+\newblock {\em Journal of Banking \& Finance\/}~{\em 37\/}(8), 3169--3180.
+
+\bibitem[\protect\citeauthoryear{Iverson}{Iverson}{2003}]{iverson2003j}
+Iverson, K. (2003).
+\newblock J programming language {J Software Inc}.
+
+\bibitem[\protect\citeauthoryear{Merton}{Merton}{1977}]{merton1977analytic}
+Merton, R. (1977).
+\newblock {An analytic derivation of the cost of deposit insurance and loan
+  guarantees An application of modern option pricing theory}.
+\newblock {\em Journal of Banking \& Finance\/}~{\em 1\/}(1), 3--11.
+
+\bibitem[\protect\citeauthoryear{Myers and Read}{Myers and
+  Read}{2001}]{myers2001capital}
+Myers, S. and J.~Read (2001).
+\newblock {Capital allocation for insurance companies}.
+\newblock {\em Journal of Risk and Insurance\/}~{\em 68\/}(4), 545--580.
+
+\bibitem[\protect\citeauthoryear{{R Development Core Team}}{{R Development Core
+  Team}}{2008}]{R-Development-Core-Team:2008aa}
+{R Development Core Team} (2008).
+\newblock {\em R: A Language and Environment for Statistical Computing}.
+\newblock Vienna, Austria: R Foundation for Statistical Computing.
+\newblock {ISBN} 3-900051-07-0.
+
+\bibitem[\protect\citeauthoryear{Sherris}{Sherris}{2006}]{sherris2006solvency}
+Sherris, M. (2006).
+\newblock {Solvency, capital allocation, and fair rate of return in insurance}.
+\newblock {\em Journal of Risk and Insurance\/}~{\em 73\/}(1), 71--96.
+
+\bibitem[\protect\citeauthoryear{Whittle}{Whittle}{2000}]{whittle2000probability}
+Whittle, P. (2000).
+\newblock {\em Probability via expectation}.
+\newblock Springer Science \& Business Media.
+
+\end{thebibliography}
