@@ -112,7 +112,7 @@
   \bigskip
   \bigskip
   \begin{center}
-    {\LARGE\bf Title}
+    {\LARGE\bf Measuring background and systemic risk using financial time series}
 \end{center}
   \medskip
 } \fi
@@ -123,7 +123,7 @@ This article refines and extends  SRISK methodology recently proposed in the lit
 \end{abstract}
 
 \noindent%
-{\it Keywords:}  3 to 6 keywords, that do not appear in the title
+{\it Keywords:}  Capital shortfall, background risk, Basel put, stressed expectation.
 \vfill
 
 \newpage
@@ -270,7 +270,7 @@ $$
 $$
 with equality  if  $\nu_{it}-\ell_{it}$ is concentrated on the negative axis.  If  $\nu_{it}>\ell_{it}$  has positive probability then the  inequality is strict.   Further $\mathrm{SRISK}_{it}$ in \eref{sriskperc}   is zero whenever
 $$
-\Es(\e^{\nu_{it}})\ge\e^{\ell_{it}}\ .
+\ell_{it}\le \ln\Es(\e^{\nu_{it}})\ .
 $$
 This inequality typically holds even if the expectation conditions on an extreme market downturn. The above two inequalities suggest SRISK is not risk sensitive and leads to refinements discussed in the next section.
 
@@ -303,7 +303,7 @@ linear combination of a range of conditional expectations each assuming some lev
 \be{formula}
  \Es(p_{it}) \equiv \E\{\phi\E(p_{it}|\phi)\} = \E(\phi p_{it}) = \E(p_{it}) + \cov\{\E(p_{it}|\phi),\phi\}\ .
 \ee
-Here $\phi\ge 0$ with $\E(\phi)=1$ is a random stress factor or ``stressor,"  with different values re-weighting, and corresponding to, scenarios impacting $p_{it}$.  Thus stress $\phi$ increases the expected value $\E(p_{it})$ by the covariance between the conditional expectation $\E(p_{it}|\phi)$  and the stressor $\phi$. A larger covariance results if higher values of $\phi$, corresponding to increasingly stressed scenarios, lead to larger put values. The covariance is zero if $p_{it}$ does not vary with the different scenarios indicated by $\phi$, or under the trivial case $\phi=1$ where scenarios are not re-weighted. The impact of $\phi$ is formalised in \eref{post} below. Examples of $\phi$ implying various stress calculations are shown in subsequent sections. Weighted expectations in the form of \eref{formula} are discussed in \cite{choo2010determining} and \cite{furman2008weighted1}.
+Here $\phi\ge 0$ with $\E(\phi)=1$ is a random stress factor or ``stressor,"  with different values re-weighting, and corresponding to, scenarios impacting $p_{it}$.  Thus stress $\phi$ increases the expected value $\E(p_{it})$ by the covariance between the conditional expectation $\E(p_{it}|\phi)$  and the stressor $\phi$. A larger covariance results if higher values of $\phi$, corresponding to increasingly stressed scenarios, lead to larger put values. The covariance is zero if $p_{it}$ does not vary with the different scenarios indicated by $\phi$, or under the trivial case $\phi=1$ where scenarios are not re-weighted. The impact of $\phi$ is formalised in \eref{post} below. Examples of $\phi$ implying various stress calculations are shown in subsequent sections. Weighted expectations of the form of \eref{formula} are discussed in \cite{furman2008weighted1} and \cite{choo2010determining}.
 
 The first equality in \eref{formula} follows from the definition of conditional probability \citep{whittle2000probability}.  The second equality follows from
 $$
@@ -347,7 +347,7 @@ s_{it} = q_{\phi it}\E_\phi(p_{it}|\nu_{it}\le \ell_{it})-q_{it}\E(p_{it}|\nu_{i
 $$
 where $q_{\phi it}$ is the default probability implied from the stressed density in \eref{post}. The stress typically increases both the default probability  $q_{\phi it}$ and the conditional expected default $\E_\phi(p_{it}|\nu_{it}\le \ell_{it})$ relative to the unstressed quantities $q_{it}$ and $\E(p_{it}|\nu_{it} \le \ell_{it})$. Greater sensitivity of firm $i$ to market wide stresses leads to higher systemic stress $s_{it}$.
 
-Monitoring $\mu_{it}$ across the market provides a leading indication of the level of background stress and anticipates buildups such as shortly before the 2008 global financial crisis. The aggregation of put values and stresses across the market is discussed and illustrated below. An increase in $\mu_{it}$ indicates either higher probabilities of defaults or larger capital shortfalls if defaults occur. Introducing systemic stress $s_{it}$ increases stress-sensitivity in two ways. Firstly adverse scenarios are emphasized which would otherwise be less obvious in $\mu_{it}$. Secondly, as $\phi$ is a market based stressor, system wide defaults and shortfalls resulting from market dependencies are emphasized and revealed.
+Monitoring $\mu_{it}$ across the market provides a leading indication of the level of background stress and anticipates buildups such as shortly before the 2008 global financial crisis. The aggregation of put values and stresses across the market is discussed and illustrated below. An increase in $\mu_{it}$ indicates either higher probabilities of defaults or larger capital shortfalls if defaults occur. Introducing systemic stress $s_{it}$ increases stress--sensitivity in two ways. Firstly adverse scenarios are emphasized which would otherwise be less obvious in $\mu_{it}$. Secondly, as $\phi$ is a market based stressor, system wide defaults and shortfalls resulting from market dependencies are emphasized and revealed.
 
 
 
@@ -590,17 +590,17 @@ $^\dag$All numbers multiplied by 100 except total debt (in \$bln).
 \normalsize
 
 January 2009 was a time of great stress for all eight banks.     The first  and second columns in the two halves of the table body contain the 
- Basel log--leverage $\ell_{it}$ and debt $\pi_{it}\equiv d_{it}/d_t$ (as a proportion of total debt) for each of the banks.  Six of the eight banks were in Basel default with positive capital shortfalls as indicated in by the $\ell_{it}$ column:   the two banks not in Basel default were WBC and aba.    Background and systemic stress
+ Basel log--leverage $\ell_{it}$ and debt $\pi_{it}\equiv d_{it}/d_t$ (as a proportion of total debt) for each of the banks.  Six of the eight banks were in Basel default with positive capital shortfalls as indicated by the $\ell_{it}$ column:   the two banks not in Basel default were WBC and ABA.    Background and systemic stress
 $$
 \mu^*_{it} \equiv \frac{\pi_{it}\mu_{it}}{\Ex_d(\mu_{it})}\cq s^*_{it} \equiv \frac{\pi_{it}s_{it}}{\Ex_d(\mu_{it})}\ , 
 $$
-for the banks as well as the probability of a Basel default in one month $q_{it}$ and the proportion $\pi_{it}$ of total debt are displayed in the next 3 columns.    The background stress column indicates most of the background stress arises from NAB -- almost 40\% of the total.   The next most background stressed bank is CBA with WBC also a substantial contributor.   The MQG bank contributes almost double to background stress compared to the proportion of total debt  it carries.  The other three small banks contribute relatively little to background stress with BOQ  almost 3 times expected on the basis of its debt.   Systemic stress is highest for the CBA, higher than expected on the basis of its debt load and hence CBA was most susceptible to stress from additional general market equity devaluation.    All other banks appear have systemic stress comparable to their size in terms of debt load with only NAB being less systemically important.    This should be compared to NAB's high background stress.
+for the banks as well as the probability $q_{it}$ of a Basel default in one month are displayed in the next 3 columns.    The background stress column indicates most of the background stress arises from NAB -- almost 40\% of the total.   The next most background stressed bank is CBA with WBC also a substantial contributor.   The MQG bank contributes almost double to background stress compared to the proportion of total debt  it carries.  The other three small banks contribute relatively little to background stress with BOQ  almost 3 times expected on the basis of its debt.   Systemic stress is highest for the CBA, higher than expected on the basis of its debt load and hence CBA was most susceptible to stress from additional general market equity devaluation.    All other banks appear have systemic stress comparable to their size in terms of debt load with only NAB being less systemically important.    This should be compared to NAB's high background stress.
 
 Continuing with January 2009, the final two rows indicate the total amount of stress in the system and it's diversifiability.    
 The second last  row labelled $\Ex_d$  displays, in order, $\Ex_d(\ell_{it})$, blank, $\overline{\mu}_t\equiv \Ex_d(\mu_{it})$, $\overline{s}_t\equiv\Ex_d(s_{it})$ and  $\Ex_d(q_{it})$.   The final row labelled $\Sigma$ displays the aggregate stress quantities,treating all eight banks as one entity, $\ell_t$, total debt $d_t$ in billions of dollars,  $\mu_t$, $s_t$, and  $q_t$.
 On an aggregate basis background stress is about twice systemic stress.   Thus there is more danger of increasing capital shortfall due to market volatility  as opposed to further stress from further substantial general market devaluation.  The final row indicates stresses are not diversifiable:    The marginally  smaller  ``diversified"  background stress is offset by an increase in systemic stress.    Also the diversified probability of Basel default is higher than the debt weighted average.   
 
-Stress readings  alter dramatically when moving to November 2014 -- there is virtually no stress in any bank and the small amount of  stress in the system is diversifiable.    Most of the  background stress is carried by NAB with lesser contributions by BEN and aba.    All the stress in the minor bank ABAis background stress as only NAB and NAB have substantial systemic stress contributions.   Again, however, it must be emphasised that there is minimal systemic stress in the system.    Only ABAhas substantial Basel default probability, but this bank is a small player in the Australian banking scene.   Notice total debt in the banking sector  jumps about 35\% between the two dates.
+Stress readings  alter dramatically when moving to November 2014 -- there is virtually no stress in any bank and the small amount of  stress in the system is diversifiable.    Most of the  background stress is carried by NAB with lesser contributions by BEN and ABA.    All the stress in the minor bank ABA is background stress as only NAB and NAB have substantial systemic stress contributions.   Again, however, it must be emphasised that there is minimal systemic stress in the system.    Only ABA has substantial Basel default probability, but this bank is a small player in the Australian banking scene.   Notice total debt in the banking sector  jumps about 35\% between the two dates.
 
 
 
@@ -772,10 +772,7 @@ Stresses are further generalised in this paper with generalized univariate and m
 \section{Conclusion}\label{conclude}
 
 
-This paper develops an approach to measure systemic risk using the concept of stressed expectations are which akin to stress testing widely used in practice. Systemic stress adds to background stress which is the value of default puts on firms. Fitting time series to Australian bank data identifies banks previously in distress and those with high contribution to systemic risk.
-
-
-
+This paper develops an approach to measure systemic risk using the concept of stressed expectations which formalise stress testing widely used in practice. Systemic stress adds to background stress which is the value of default puts on firms. Fitting time series to Australian bank data identifies banks previously in distress and those with high contribution to systemic risk.
 
 
 \begin{comment}
@@ -908,28 +905,6 @@ DataStream datatype codes are
 
 Firm equity $w_{it}$ is Number of Shares multiplied by Price. Firm debt $d_{it}$ is Total Assets minus Shareholders Equity. Stock returns are computed from the Total Return Index which includes dividends as paid. 
 
-\section{Submission guidelines}
-
-\begin{itemize}
-\item In the latex source, near the top of the file the command
-\verb+\newcommand{\blind}{1}+ can be used to hide the authors and
-acknowledgements, producing the required blinded version.
-\item If you have supplementary material (e.g., software, data, technical
-proofs), identify them in the section below.  In early stages of the
-submission process, you may be unsure what to include as supplementary
-material.  Don't worry---this is something that can be worked out at later stages.
-\end{itemize}
-
-
-\begin{description}
-
-\item[Title:] Brief description. (file type)
-
-\item[R-package for  MYNEW routine:] R-package ÒMYNEWÓ containing code to perform the diagnostic methods described in the article. The package also contains all datasets used as examples in the article. (GNU zipped tar file)
-
-\item[HIV data set:] Data set used in the illustration of MYNEW method in Section~ 3.2. (.txt file)
-
-\end{description}
 
 
 \bibliography{piet2}
