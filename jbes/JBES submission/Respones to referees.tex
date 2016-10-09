@@ -1,0 +1,197 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\var}{{\rm var}}
+\newcommand{\cov}{{\rm cov}}
+\newcommand{\nid}{{\rm NID}}
+\newcommand{\diag}{{\rm diag}}
+\newcommand{\E}{{\mathrm E}}
+\newcommand{\R}{{\mathrm R}}
+\newcommand{\RD}{{\tilde{\mathrm R}}}
+\newcommand{\Q}{{\mathrm Q}}
+\newcommand{\U}{{\mathrm U}}
+\newcommand{\Ex}{{\cal E}}
+\newcommand{\cor}{\mathrm{cor}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\de}{\mathrm{d}}
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\Ln}{\mathrm{Ln}}
+\newcommand{\sign}{\mathrm{sign}}
+
+\newcommand{\Es}{\widetilde\E}
+
+
+\newcommand{\ra}{\varrho}
+
+\newcommand{\minn}{\mathrm{min}_n}
+\newcommand{\maxn}{\mathrm{max}_n}
+
+
+\newcommand{\cq}{\ ,\quad }
+\newcommand{\qq}{\quad \Rightarrow \quad}
+\newcommand{\oq}{\quad \Leftarrow \quad}
+\newcommand{\eq}{\quad \Leftrightarrow \quad}
+
+\newcommand{\br}{\ensuremath{\mathrm{BRISK}}}
+\newcommand{\pr}{\ensuremath{\mathrm{PRISK}}}
+
+
+
+
+\newcommand{\ppo}[1]{|{#1}|^+}
+
+\newcommand{\ssection}[1]{%
+  \section[#1]{\textbf{\uppercase{#1}}}}
+\newcommand{\ssubsection}[1]{%
+  \subsection[#1]{\normalfont\textbf{#1}}}
+
+
+%\renewcommand{\labelenumi}{(\roman{enumi})}
+
+\newcommand{\eref}[1]{(\ref{#1})}
+\newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\sref}[1]{\S\ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
+\newcommand{\aref}[1]{\ref{#1}}
+
+
+
+\newcommand{\bi}{\begin{itemize}}
+\renewcommand{\i}{\item}
+\newcommand{\ei}{\end{itemize}}
+
+
+
+\newcommand{\es}{{\mathrm{ES}}}
+\newcommand{\ses}{{\mathrm{SES}}}
+\newcommand{\sr}{{\mathrm{SR}}}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Response to referees}
+\author{The Author}
+%\date{}                                           % Activate to display a given date or no date
+
+
+\begin{document}
+\maketitle
+\section{Responses to the first referee}
+
+Referee comments are reproduced in italics.  The order of the comments below are the same as those of the referee.
+
+\begin{enumerate}
+\item {\it The main contribution of this paper is to re-interpret SRISK as a put.}
+
+We apologise  and accept our responsibility for misleading the referee into this mistaken conclusion.  SRISK is deconstructed, the parts  reconfigured, rebuilt and extended.    The implications of using $S^+$ (the payoff of a ``put") as opposed to $\{\E(S)\}^+$  appears critical and significant -- see the revised manuscript.  Using  $S^+$ emphasises the measurement of upper tail risk (see below) and leads to the distinction between baseline risk (BRISK) and psi risk (PRISK) as set out below.   The reconstruction has implications for risk aggregation, diversification and contagion.
+
+\item  {\it Within this setting, the paper provides various, mostly theoretical definitions what can be done with this re--interpretation of SRISK. The literature behind those measures is actuarial ... and may not be familiar to the audience at large.}  
+
+Again we apologise for making the referee think the contributions are theoretical and  a reinterpretation of existing measures.  Our reconstructed measures  are implemented, applied  and analysed  in the empirical sections of the paper.    
+
+\item {\it ... to define SRISK in terms of a put, hardly seems to be a refinement.}
+
+Please see above.  Again we accept full responsibility for leading the referee to this mistaken conclusion.
+
+\item {\it `we take the stressed expectation of the put value.' First of all, this does not tell the regulator why this measure is important for him. Second, in a purely mathematical sense, the value of a put is a positive real number - a price. Taking a stressed expectation of such a number is meaningless. Do you mean: we take the stressed expectation of an expression which is alike the payoff of a put?}
+
+ $\Es(S^+)$ focussed on the practically important  upper tail risk.   $\{\Es(S)\}^+$ potentially ``averages out" upper tail risk (of critical importance) with lower tail risk (of no direct interest to the regulator).  Using $\Es$ instead of $\E$ emphasises interest is under adverse scenarios.   $\Es$ generalises and includes the concept of conditional expectation given a crisis typically used  in the literature and mentioned by the referee.
+
+We agree with the referee that a more precise statement is the  
+the ``expectation of the put payoff value" rather than the ``expectation of the put."   Potentially misleading terminology has now been removed from the manuscript.
+
+\item {\it please render the abstract comprehensible to an economic and finance audience and explain in intuitive words what you are doing and not by referring to possible unknown concepts.}
+
+Have made the abstract more explicit and comprehensible.
+
+\item {\it it would have been nice to have a comparison with say American firms.}
+
+Ok agree with this.
+
+\item {\it the paper makes the same counterfactual assumption as the literature that in case of a stress a bank has constant debt.}
+
+Our assumption is as in \cite{brownlees2015} where it is argued as reasonable over a monthly horizon.   To change this would be to depart from the literature and make comparisons more intricate and difficult.  
+
+\item {\it is assumed that the prudential parameter 8\% is the same for all firms. Banks with riskier asset structure should have a different ? than banks with relatively safe investments. This should be incorporated too.}
+
+This is a good point and is now emphasises  in the revised version.   Alternatively a final section makes explicit the connection the  Risk weighted asset  methodology.
+
+\item {\it There are sentences which are hard to understand.}
+
+Ok, agree with this
+
+\item {\it We decompose SRISK into background stress and imposed system stress. ... However, since both components are not defined it is sort of hard to follow what is meant in the following discussion.}
+
+Our presentation has  misled the referee into thinking ``both components not defined".     Baseline risk (previously called background risk) is explicitly defined as $\E(S^+)$.   Imposed system stress (now called psi--risk or PRISK) is explicitly defined as  $\Es(S^+)-\E(S^+)$
+where $\Es$ is expectation under stress and explicitly defined with respect to a stress factor $\psi$.  
+
+\item {\it ... sharper focus on the incremental impact of further market conditions. ... This promise is not really fulfilled.}
+
+Maybe this is correct
+
+\item {\it ... what matters to the regulator and the taxpayers is the actual amount that the firm would need and not the risk neutral one. Also, since there is no duplication strategy, markets are not complete, it is not clear that even if one were to price a put in a finance sense that to go risk neutral is the right thing to do.}
+
+This expands on the previous misunderstanding of put versus put value.   Note that the referee particularly refers to the ``actual amount that the firm would need"  ie.  $S^+$ (rather than $S$).   While the point is a tangential one, markets could be allowed to price $S^+$.   We agree that risk neutral valuation would require a complete market which is not at least immediately available in this context.  However the ``put" interpretation is tangential to our development and has now been downplayed.
+
+
+\item {\it Use the same notations for capital shortfall (formula (1) etc, as
+in Brownlees and Engle, 2010, 2015). This would really simplify reading the paper for someone with knowledge of the earlier literature.}
+
+Have simplified notation as far as possible to make it align with that in the existing literature.
+
+\end{enumerate}
+
+\newpage
+\section{Second referee}
+
+ {\it The authors deal with an important and timely topic.  However there are  a number of concerns}
+\begin{enumerate}
+\item {\it ... not clear to me what is the value added of the paper. Yes, the generalisation of the framework provided by the authors makes a lot of sense. I like for instance the decomposition in section 7 of background and systemic stress. However, it is not clear to me what is the significant value added of the refinement carried out by the authors. I do not find this clearly explained in the manuscript.}
+
+We are grateful for the author for pointing out the inadequacies in the previous presentation and have used his comments to make the contribution much more evident and transparent.   Please see the revised submission.  In particular we have stripped out all extraneous material, notation and in particular subscripting and have introduced an explicit section formalising stress testing.
+
+\item  {\it authors could have validated the methodology put forward in this paper by comparing it empirically with other approaches out there (including SRISK and CoVaR).}
+
+At this stage we have confined ourselves to developing, as rigorously as possible the theory and application and have contrasted the theory with that in the two other mentioned approaches.
+
+\item  {\it ... the empirical application is quite limited in scope.}
+
+\item {\it ...  There is no attempt to validate empirically the usefulness of the proposed approach.}
+
+We apologise for having led the referee to this misunderstanding.   The aim of the empirical work in the paper is to validate the approach on a tight, albeit limited, dataset to illustrate the usefulness of the techniques.    We have used his comment and set about to improve the empirical validation.  Please see the revised manuscript.  
+
+\item {\it ...  there is no attempt to show that the approacj pushed forward in this work is better than standard SRISK methodology.}
+
+In the revised manuscript we have more clearly delineated the pitfalls of SRISK:  namely the focus on $\{\Es(S)\}^+$ rather than 
+$\Es(S^+)=\E(S^+)+\pr(S^+)$.  The former SRISK measure is defective, it is argued on the following grounds:
+\begin{enumerate}
+\item  The measure $\{\Es(S)\}^+$ does not effectively measure the tail risk associated with $S$ since it ``averages" out the tails.  Our measure uses $S^+$ which is responsive to (positive) tail risk.
+
+It is worthwhile to examine the SRISK definition $\{\Es(S)\}^+$ and compare it to $\Es(S^+)$.  The former averages over positive and negative shortfalls treating either extreme equivalently.   So heightened volatility will not affect even though the risk of a damaging shortfall may be dramatically increased.    With $\Es(S^+)$ the focus is firmly on the damaging part of the distribution.   Next, when considering stressed expectation we have 
+$$
+\{\Es(S)\}^+ = \{\E(S) + \pr(S)\}^+
+$$
+In other words a high value suggests both $\E(S)$ and $\pr(S)$ are large.  
+\item  The stressed expectation $\Es$ in SRISK is specialised.   In our presentation it is generally defined with respect to any stress $\psi$.
+\item  The stressed expectation $\Es$ is made up of two components which have differing interpretation:  baseline risk unrelated to stress per se, and psi-risk (PRISK) defined solely in terms of $\psi$.  
+\end{enumerate} 
+\item {\it ... understand the authors want to focus on the case of Australia. However, I would be inclined to think that systemic risk measures are interesting for the pre-screening ?large? financial systems (say hundreds of financial institutions). It is unclear to me how systemic risk measures are useful for monitoring a system in which it is already know that there are very few core banks only.}
+
+We agree with this comment.   However we were particularly concerned to initially implement and study the tools in the context of a more strictly defined setting.   We agree the next logical step is, given the demonstrated effectiveness of the tools, for more large scale bank and financial institution screening as in the richer data setting of the US or Europe. 
+\item {\it This paper is not really about statistics/econometrics. In a way, an appropriately revised version of the paper could find a better fit in a finance journal.}
+\item  {\it Too many sections. Methodological part and empirical parts are presented in scattered order.}
+
+We agree and have radically cut down the number of sections.
+\end{enumerate}
+\newpage
+
+
+
+
+\end{document}  

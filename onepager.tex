@@ -1,0 +1,121 @@
+\documentclass[authoryear]{elsarticle}
+\usepackage{amsmath}
+\usepackage{graphicx,psfrag,epsf,comment}
+\usepackage{enumerate}
+\usepackage{url} % not crucial - just used below for the URL 
+\bibliographystyle{chicago}
+\usepackage{threeparttable}
+
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\I}{\mathrm{I}}
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\e}{\mathrm{e}}
+\renewcommand{\o}{\omega}
+\newcommand{\vecm}{\mathrm{vec}}
+\newcommand{\kp}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\obdots}{\ddots}    % change this later
+\newcommand{\Ex}{{\cal E}}
+\newcommand{\Ax}{{\mathrm{A}}}
+\newcommand{\Exd}{\Ex_d}
+\newcommand{\Es}{\Ex}
+\newcommand{\rat}{{\frac{c_{ij}}{c_{i,j-1}}}}
+\newcommand{\rmu}{m}
+\newcommand{\rsig}{  r}
+\newcommand{\fd}{\mu}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\cor}{\mathrm{cor}}
+\newcommand{\bx}[1]{\ensuremath{\overline{#1}|}}
+\newcommand{\an}[1]{\ensuremath{a_{\bx{#1}}}}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\renewcommand{\i}{\item}
+\newcommand{\sr}{\ensuremath{\mathrm{SRISK}}}
+\newcommand{\br}{\ensuremath{\mathrm{BRISK}}}
+\newcommand{\pr}{\ensuremath{\mathrm{PRISK}}}
+\newcommand{\cs}{\ensuremath{\mathrm{CS}}}
+\newcommand{\cri}{\ensuremath{\mathrm{Crisis}}}
+\newcommand{\var}{\ensuremath{\mathrm{VaR}}}
+\newcommand{\covar}{\ensuremath{\mathrm{CoVaR}}}
+\newcommand{\med}{\ensuremath{\mathrm{m}}}
+\newcommand{\de}{\mathrm{d}}
+\renewcommand{\v}{\ensuremath{\mathrm{v}_q}}
+\newcommand{\m}{\ensuremath{\mathrm{m}}}
+\newcommand{\tvar}{\ensuremath{\mathrm{TVaR}}}
+\renewcommand{\c}{\ensuremath{\mathrm{CoVaR_q}}}
+\renewcommand{\v}{\ensuremath{\mathrm{VaR}_q}}
+
+\newcommand{\eref}[1]{(\ref{#1})}
+\newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\sref}[1]{Section \ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
+\newcommand{\aref}[1]{Appendix \ref{#1}}
+
+\newcommand{\cq}{\ , \qquad}
+\renewcommand{\P}{\mathrm{P}}
+\newcommand{\Q}{\mathrm{Q}}
+
+\newcommand{\Vx}{{\cal V}}
+\newcommand{\be}[1]{\begin{equation}\label{#1}}
+\newcommand{\ee}{\end{equation}}
+
+\newcommand{\D}{\mathrm{D}}
+
+
+
+\begin{document}
+
+\section*{Monitoring systemic risk}\label{srisk}
+
+ \cite{brownlees2015} define  systemic risk\footnote{In contrast to \cite{brownlees2015} we factor out the scale factor $kd$ making for a more transparent 0 to 1 scale for \sr.} for a group of firms in terms of the expected future capital requirement $S_i$ for each firm $i$ in the group:
+\be{esrisk}
+\sr =  \sum_i \pi_i\left\{\Es(S_i)\right\}^+ = \D[\{\Ex(S_i)\}^+]\cq \pi_i = \frac{d_i}{d}\cq d=\sum_id_i \ ,
+\ee
+where $S_i=1-\e^{r_i-\ell_i}$ is the shortfall  for firm $i$.
+Here $\Es$ denotes expectation given a major general market downturn and $\D$ is debt weighted averaging.    Further \sr\ is expressed in units $kd$ and $0\le\sr\le 1$ with \sr\ near 1 indicating extreme financial distress for all firms. \sr\ is based on the expected capital requirement and firms with an expected capital surplus under stress are ignored.   The expression \eref{esrisk} slightly modifies the definition  of \cite{brownlees2015} by dividing their \sr\ expression by $kd$. 
+
+The systemic risk contribution of firm $i$  is  \citep{brownlees2015} 
+\be{sriskperc}
+\sr_i=\frac{\pi_i\{\Ex(S_i)\}^+}{\sr} \ .
+ \ee
+ Note $0\le \sr_i\le 1$ with larger values indicating firm $i$ is systemically important: it holds a high proportion $\pi_i$ of the total debt, and/or is likely to heavily breach, compared to other firms, the Basel capital requirement under the stress event implicit in the calculation of $\Ex$.  Expression \eref{sriskperc} depends on $k$ through each of the adjusted log--leverages $\ell_i$. 
+
+In this article we propose four modifications to \sr\ and $\sr_i$ defined in \eref{esrisk} and \eref{sriskperc}.   Each of these modifications is designed to improve stress monitoring.  The proposed  modifications to \sr\  are shown,  theoretically and empirically, to have more  sensitivity and specificity.   Sensitive, in the sense of more likely detect  firms likely to face financial distress.   Specific in the sense of   minimising false alarms.  The modifications are:
+\begin{enumerate}
+\item  Replacing $\{\Es(S_i)\} ^+$ in \eref{esrisk} and \eref{sriskperc} by $\Es(S_i^+)\ge\{\Es(S_i)\} ^+$.   The justification is that typically $\Es(S_i)=0$ and  hence \eref{esrisk} is not affected by firms that  have zero expected capital requirement even though in individual instances that capital requirement may be large.   Using $\Ex(S^+_i)$ instead of $\Ex(S_i)$ implies each firm counts with degree depending on the its proportionate contribution $\pi_i$ to total debt and the expected value of a put on its shortfall.   
+\item Using more general   definitions of $\Es$ to encompass more flexible stress specifications.   For example modelling stress  as a 10\% market downturn, while pertinent and interesting, is obviously arbitrary.   This paper posits more flexible and robust specification of stressed expectation $\Ex$.   
+\item  Baseline risk is defined as $0\le \E(S_i^+)\le 1$.  The  stress index  is the proportionate increase in baseline risk when stress $\psi$ is applied:
+$$
+s_i=\frac{\Ex(S_i^+)-\E(S_i^+)}{\E(S_i^+)}\ .
+$$
+Thus $1+s_i$ is a risk ratio, comparing the default put option price under stress and baseline conditions.
+\item Total diversifiable baseline risk is $0\le\E(S^+)\le 1$ where, as before, $S=\D(S_i)$, total shortfall per unit $kd$ where $d$ is total debt.  The diversifiable stress index is 
+$$
+s=\frac{\Ex(S^+)-\E(S^+)}{\E(S^+)}\ .
+$$
+
+\item Total non-diversifiable baseline risk is $0\le\E\{\D(S_i^+)\}\le 1$.  The risk is non--diversifiable since shortfall $S_i>0$ in one firm cannot be offset by surplus in other firms.   Total non--diversifiabe  stress risk is
+$$
+s^*=\frac{\Ex\{\D(S_i^+)\}-\E\{\D(S_i^+)\}}{\E\{\D(S_i^+)\}} = \frac{\D\{s_i\E(S^+_i)\}}{\D\{\E(S^+_i)\}}\ ,
+$$
+a weighted average of firm specific stress risks $s_i$ using weights $\pi_i\E(S_i^+)$.   A firm figures highly in overall stress risk if its stress index is large, carries a significant portion of debt,  and its baseline risk is high.   
+
+
+\item  A measure of the absorbability of defaults in single firms is 
+$$
+ \alpha= \frac{s^*-s}{s}\ge 0\ .
+$$
+If $\alpha=0$ then $s^*= s$ and  shortfalls in individual firms translate  directly into a shortfall for the system as a whole.   Conversely a large value of $\alpha$ indicates stress in single firms can be absorbed elsewhere.   The reciprocal $1/\alpha$ is a measure of contagion.
+\end{enumerate}
+
+\section*{References}
+\bibliography{piet2}
+\end{document}
+
+ 

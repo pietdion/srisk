@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: CIFR industry paper.aux
+The style file: chicago.bst
+Database file #1: piet2.bib
+Warning--no number and no volume in cummins1988risk
+You've used 14 entries,
+            2861 wiz_defined-function locations,
+            712 strings with 7102 characters,
+and the built_in function-call counts, 9080 in all, are:
+= -- 789
+> -- 590
+< -- 1
++ -- 170
+- -- 216
+* -- 782
+:= -- 1668
+add.period$ -- 42
+call.type$ -- 14
+change.case$ -- 92
+chr.to.int$ -- 14
+cite$ -- 15
+duplicate$ -- 248
+empty$ -- 580
+format.name$ -- 248
+if$ -- 1653
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 15
+newline$ -- 73
+num.names$ -- 140
+pop$ -- 60
+preamble$ -- 1
+purify$ -- 178
+quote$ -- 0
+skip$ -- 272
+stack$ -- 0
+substring$ -- 536
+swap$ -- 81
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 260
+warning$ -- 1
+while$ -- 154
+width$ -- 0
+write$ -- 185
+(There was 1 warning)

@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: srisk8.aux
+The style file: chicago.bst
+Database file #1: piet2.bib
+Warning--no number and no volume in brownlees2010volatility
+Warning--page numbers missing in brownlees2010volatility
+Warning--no number and no volume in cummins1988risk
+Warning--no number and no volume in ghalanos2012rmgarch
+Warning--page numbers missing in ghalanos2012rmgarch
+You've used 22 entries,
+            2861 wiz_defined-function locations,
+            752 strings with 8802 characters,
+and the built_in function-call counts, 14225 in all, are:
+= -- 1219
+> -- 1041
+< -- 0
++ -- 306
+- -- 366
+* -- 1226
+:= -- 2652
+add.period$ -- 65
+call.type$ -- 22
+change.case$ -- 154
+chr.to.int$ -- 22
+cite$ -- 27
+duplicate$ -- 365
+empty$ -- 829
+format.name$ -- 422
+if$ -- 2585
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 13
+newline$ -- 112
+num.names$ -- 220
+pop$ -- 99
+preamble$ -- 1
+purify$ -- 287
+quote$ -- 0
+skip$ -- 415
+stack$ -- 0
+substring$ -- 706
+swap$ -- 120
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 440
+warning$ -- 5
+while$ -- 217
+width$ -- 0
+write$ -- 288
+(There were 5 warnings)
